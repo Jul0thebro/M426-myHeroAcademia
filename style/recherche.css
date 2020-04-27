@@ -6,7 +6,12 @@
 }
 
 body {
-    text-align: center;
+    text-align: center
+}
+
+header {
+    font-weight: bold;
+    font-size: 50pt;
 }
 
 main {

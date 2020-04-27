@@ -8,14 +8,15 @@
 var barreRecherche = document.getElementById("barreRecherche"); // Input de la barre de recherche
 var affichage = document.getElementById("listePersonnages"); // Div dans laquelle est affiché le lien vers le personnage
 
+
 function rechercher() {
     var entree = barreRecherche.value;
 
+    affichage.innerHTML = "";
+
     if (entree.length != 0) {
         document.tabPersonnages.forEach(function(element, index) {
-            if (element.nom.toLowerCase().includes(entree.toLowerCase()) ||
-                element.prenom.toLowerCase().includes(entree.toLowerCase()) ||
-                element.nomHero.toLowerCase().includes(entree.toLowerCase())) {
+            if (element.nom.toLowerCase().includes(entree.toLowerCase()) || element.prenom.toLowerCase().includes(entree.toLowerCase()) || element.nomHero.toLowerCase().includes(entree.toLowerCase())) {
 
                 var personnage = document.createElement("div");
                 personnage.indexPersonnage = index;
@@ -23,12 +24,10 @@ function rechercher() {
                 personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
                 personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
 
-                localStorage.setItem("indexPersonnage", personnage.indexPersonnage);
-
                 affichage.appendChild(personnage);
             }
         });
     }
 }
 
-barreRecherche.addEventListener("keypress", rechercher); /* rajoute l'évenement sur la arre de recherche */
+barreRecherche.addEventListener("keyup", rechercher); /* rajoute l'évenement sur la arre de recherche */
