@@ -10,13 +10,18 @@ var affichage = document.getElementById("correspondance");// Div dans laquelle e
 function rechercher() {
     var entree = barreRecherche.value;
 
-    tabPersonnages.forEach(function(element, index) {
-        if(element.nom.includes(entree) || element.prenom.includes(entree) || element.nomHero.includes(entree)) {
+    tabPersonnages.forEach(function (element, index) {
+        if (element.nom.includes(entree) || element.prenom.includes(entree) || element.nomHero.includes(entree)) {
             var personnage = document.createElement("div");
             personnage.link = index;
+
+            personnage.innerHTML = '<img src="' + element.photo + ' alt="'+ element.toString() +'"">'
+            personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+
+            affichage.appendChild(personnage);
         }
     });
-   
+
 }
 
-barreRecherche.addEventListener("onkeydown", rechercher);
+barreRecherche.addEventListener("onkeydown", rechercher);/* rajoute l'évenement sur la arre de recherche */

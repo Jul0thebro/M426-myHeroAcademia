@@ -31,6 +31,10 @@ class Personnage {
         this.histoire = histoire;
         this.episodes = episodes;
     }
+
+    toString() {
+        return this.prenom + " " + this.nom + " " + this.nomHero;
+    }
 }
 
 var tabPersonnages = [
