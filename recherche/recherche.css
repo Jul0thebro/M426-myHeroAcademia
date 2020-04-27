@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Naruto';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mha'), url('../Resources/Font/mhaFont.otf') format('otf');
+}
+
+body {
+    text-align: center;
+}
+
+main {
+    margin-top: 5%;
+}
+
+#gauche {
+    float: left;
+    border-right: 1px solid black;
+}
+
+#droite {
+    float: right;
+}
