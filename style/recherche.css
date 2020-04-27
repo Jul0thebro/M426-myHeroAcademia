@@ -10,15 +10,24 @@ body {
 }
 
 main {
-    margin-top: 5%;
+    width: 50vw;
+    height: 100vh;
+    display: inline-block;
+}
+
+aside {
+    display: inline-block;
+    width: 20vw;
 }
 
 #gauche {
-    float: left;
     border-right: 1px solid black;
 }
 
 #droite {
-    float: right;
     border-left: 1px solid black;
+}
+
+#page {
+    margin-top: 5%;
 }

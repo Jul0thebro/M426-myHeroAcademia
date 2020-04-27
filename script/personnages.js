@@ -38,6 +38,7 @@ class Personnage {
 }
 
 var tabPersonnages = [
-    new Personnage("Bonjour", "Monsieur", "Salut", "heroo", 1, "tuer", "manger", "asdasd", "lessaisons" ),
-    new Personnage(),
+    new Personnage("Bonjour", "Monsieur", "Salut", "heroo", 1, "tuer", "manger", "asdasd", "lessaisons"),
 ]
+
+document.tabPersonnages = tabPersonnages;
