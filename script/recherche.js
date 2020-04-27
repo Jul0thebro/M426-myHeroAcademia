@@ -11,12 +11,16 @@ function rechercher() {
     var entree = barreRecherche.value;
 
     tabPersonnages.forEach(function (element, index) {
-        if (element.nom.includes(entree) || element.prenom.includes(entree) || element.nomHero.includes(entree)) {
+        if (element.nom.toLowerCase().includes(entree.toLowerCase()) ||
+            element.prenom.toLowerCase().includes(entree.toLowerCase()) ||
+            element.nomHero.toLowerCase().includes(entree.toLowerCase())) {
             var personnage = document.createElement("div");
-            personnage.link = index;
+            personnage.indexPersonnage = index;
 
-            personnage.innerHTML = '<img src="' + element.photo + ' alt="'+ element.toString() +'"">'
+            personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
             personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+
+            localStorage.setItem("indexPersonnage", personnage.indexPersonnage);
 
             affichage.appendChild(personnage);
         }
