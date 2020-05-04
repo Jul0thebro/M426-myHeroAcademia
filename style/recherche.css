@@ -38,6 +38,14 @@ aside {
     height: 8%;
 }
 
+#aileGauche {
+    transform: translateX(2.5vw);
+}
+
+#aileDroite {
+    transform: translateX(-2.5vw);
+}
+
 #gauche {
     border-right: 3px solid black;
     float: left;
