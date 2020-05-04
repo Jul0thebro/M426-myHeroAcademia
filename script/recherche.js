@@ -9,6 +9,9 @@ var barreRecherche = document.getElementById("barreRecherche"); // Input de la b
 var affichage = document.getElementById("listePersonnages"); // Div dans laquelle est affiché le lien vers le personnage
 
 
+/**
+ * Permet de trouver la correspondance dans le tableau des personnages
+ */
 function rechercher() {
     var entree = barreRecherche.value;
 
@@ -16,16 +19,25 @@ function rechercher() {
 
     if (entree.length != 0) {
         document.tabPersonnages.forEach(function(element, index) {
-            if (element.nom.toLowerCase().includes(entree.toLowerCase()) || element.prenom.toLowerCase().includes(entree.toLowerCase()) || element.nomHero.toLowerCase().includes(entree.toLowerCase())) {
 
-                var personnage = document.createElement("div");
-                personnage.indexPersonnage = index;
+            var mots = entree.split(' ');
 
-                personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
-                personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+            mots.forEach(mot => {
+                if (element.nom.toLowerCase().includes(mot.toLowerCase()) || element.prenom.toLowerCase().includes(mot.toLowerCase()) || element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
 
-                affichage.appendChild(personnage);
-            }
+                    var personnage = document.createElement("div");
+                    personnage.indexPersonnage = index;
+
+                    personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
+                    personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+
+                    affichage.appendChild(personnage);
+
+                    break;
+                }
+            });
+
+
         });
     }
 }

@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'Naruto';
+    font-family: 'Mha';
     font-style: normal;
     font-weight: normal;
     src: local('Mha'), url('../Resources/Font/mhaFont.otf') format('otf');
 }
 
 body {
-    text-align: center
+    text-align: center;
+    font-family: "Futura Display BQ";
 }
 
 header {
@@ -27,10 +28,12 @@ aside {
 
 #gauche {
     border-right: 1px solid black;
+    float: left;
 }
 
 #droite {
     border-left: 1px solid black;
+    float: right;
 }
 
 #page {
