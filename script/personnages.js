@@ -21,7 +21,7 @@ class Personnage {
      * @param {array of array} episodes Contient tous les épisodes dans lesquells apparait le personnage sous cette forme : [saison, episode]
      */
     constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episodes) {
-        this.photo = "../Resources/images" + photo;
+        this.photo = "../Resources/personnages/" + photo;
         this.nom = nom;
         this.prenom = prenom;
         this.nomHero = nomHero;
@@ -42,7 +42,9 @@ var tabPersonnages = [
     new Personnage("Aurevoir", "Salut", "blabla", "hasd", 5, "manguer", "asda", "skdjfhliasuhgé", [
         [1, 2],
         [2, 3]
-    ])
+    ]),
+    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 16, "One For All", "Héro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 16, "A remplir", "Héro", "A remplir", "A remplir")
 ]
 
 document.tabPersonnages = tabPersonnages;

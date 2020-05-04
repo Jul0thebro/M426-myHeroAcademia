@@ -68,3 +68,7 @@ aside {
     width: 20vw;
     height: 4vh;
 }
+
+#listePersonnages div img {
+    vertical-align: middle;
+}

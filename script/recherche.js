@@ -90,7 +90,7 @@ function remplirTableauPersonnages(div) {
         personnage.id = "personnage_" + index;
 
         personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.toString() + '">'
-        personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+        personnage.innerHTML += '<a href="detailPersonnage.html">' + element.toString() + "</a>";
 
         personnage.style.display = "none";
 
