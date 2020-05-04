@@ -38,11 +38,6 @@ class Personnage {
 }
 
 var tabPersonnages = [
-    new Personnage("Bonjour", "Monsieur", "Salut", "heroo", 1, "tuer", "manger", "asdasd", "lessaisons"),
-    new Personnage("Aurevoir", "Salut", "blabla", "hasd", 5, "manguer", "asda", "skdjfhliasuhgé", [
-        [1, 2],
-        [2, 3]
-    ]),
     new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 16, "One For All", "Héro", "A remplir", "A remplir"),
     new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 16, "A remplir", "Héro", "A remplir", "A remplir")
 ]
