@@ -39,6 +39,10 @@ class Personnage {
 
 var tabPersonnages = [
     new Personnage("Bonjour", "Monsieur", "Salut", "heroo", 1, "tuer", "manger", "asdasd", "lessaisons"),
+    new Personnage("Aurevoir", "Salut", "blabla", "hasd", 5, "manguer", "asda", "skdjfhliasuhgé", [
+        [1, 2],
+        [2, 3]
+    ])
 ]
 
 document.tabPersonnages = tabPersonnages;

@@ -2,16 +2,22 @@
     font-family: 'Mha';
     font-style: normal;
     font-weight: normal;
-    src: local('Mha'), url('../Resources/Font/mhaFont.otf') format('otf');
+    src: local('Mha'), url('../Resources/Font/mhaFont.woff') format('woff');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
     text-align: center;
-    font-family: "Futura Display BQ";
+    font-family: "Mha";
+    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
 }
 
 header {
-    font-weight: bold;
+    margin-top: 2%;
     font-size: 50pt;
 }
 
@@ -27,12 +33,12 @@ aside {
 }
 
 #gauche {
-    border-right: 1px solid black;
+    border-right: 3px solid black;
     float: left;
 }
 
 #droite {
-    border-left: 1px solid black;
+    border-left: 3px solid black;
     float: right;
 }
 

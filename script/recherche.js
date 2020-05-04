@@ -10,36 +10,50 @@ var affichage = document.getElementById("listePersonnages"); // Div dans laquell
 
 
 /**
- * Permet de trouver la correspondance dans le tableau des personnages
+ * Affiche les personnages qui correspondent à la recherche
  */
 function rechercher() {
     var entree = barreRecherche.value;
-
-    affichage.innerHTML = "";
 
     if (entree.length != 0) {
         document.tabPersonnages.forEach(function(element, index) {
 
             var mots = entree.split(' ');
+            var estAffiche = false;
 
             mots.forEach(mot => {
                 if (element.nom.toLowerCase().includes(mot.toLowerCase()) || element.prenom.toLowerCase().includes(mot.toLowerCase()) || element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
-
-                    var personnage = document.createElement("div");
-                    personnage.indexPersonnage = index;
-
-                    personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
-                    personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
-
-                    affichage.appendChild(personnage);
-
-                    break;
+                    estAffiche = true;
                 }
             });
 
-
+            if (estAffiche) {
+                document.getElementById("personnage_" + index).style.display = "block";
+            } else {
+                document.getElementById("personnage_" + index).style.display = "none";
+            }
         });
     }
 }
+/**
+ * Remplit le tableau avec tous les personnages
+ */
+function remplirTableauPersonnages(div) {
+    document.tabPersonnages.forEach(function(element, index) {
 
-barreRecherche.addEventListener("keyup", rechercher); /* rajoute l'évenement sur la arre de recherche */
+        var personnage = document.createElement("div");
+        personnage.id = "personnage_" + index;
+
+        personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
+        personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
+
+        personnage.style.display = "none";
+
+        affichage.appendChild(personnage);
+
+    });
+}
+
+remplirTableauPersonnages(affichage);
+
+barreRecherche.addEventListener("keyup", rechercher); /* rajoute l'évenement sur la barre de recherche */
