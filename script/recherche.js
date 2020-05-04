@@ -65,12 +65,6 @@ function rechercher() {
                             estAffiche = false;
                             break;
                     }
-
-
-
-                    // if (element.nom.toLowerCase().includes(mot.toLowerCase()) || element.prenom.toLowerCase().includes(mot.toLowerCase()) || element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
-                    //     estAffiche = true;
-                    // }
                 }
             });
 
