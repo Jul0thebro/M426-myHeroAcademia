@@ -32,6 +32,22 @@ aside {
     width: 20vw;
 }
 
+#divRecherche img {
+    vertical-align: bottom;
+    width: 4%;
+    height: 8%;
+    position: absolute;
+    top: 28.5%;
+}
+
+#aileGauche {
+    left: 37.5%;
+}
+
+#aileDroite {
+    right: 37.5%;
+}
+
 #gauche {
     border-right: 3px solid black;
     float: left;

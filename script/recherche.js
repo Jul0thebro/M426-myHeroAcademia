@@ -25,8 +25,13 @@ function rechercher() {
             var prenom = false;
             var nomHero = false;
 
+            if (mots[mots.length - 1].length == 0) {
+                mots.pop();
+            }
+
             mots.forEach(mot => {
                 if (mot.length != 0) {
+
                     if (!nom && element.nom.toLowerCase().includes(mot.toLowerCase())) {
                         nom = true;
                     }
@@ -52,7 +57,12 @@ function rechercher() {
                             }
                             break;
                         case 3:
-
+                            if (nom && prenom && nomHero) {
+                                estAffiche = true;
+                            }
+                            break;
+                        default:
+                            estAffiche = false;
                             break;
                     }
 
