@@ -21,9 +21,46 @@ function rechercher() {
             var mots = entree.split(' ');
             var estAffiche = false;
 
+            var nom = false;
+            var prenom = false;
+            var nomHero = false;
+
             mots.forEach(mot => {
-                if (element.nom.toLowerCase().includes(mot.toLowerCase()) || element.prenom.toLowerCase().includes(mot.toLowerCase()) || element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
-                    estAffiche = true;
+                if (mot.length != 0) {
+                    if (!nom && element.nom.toLowerCase().includes(mot.toLowerCase())) {
+                        nom = true;
+                    }
+
+                    if (!prenom && element.prenom.toLowerCase().includes(mot.toLowerCase())) {
+                        prenom = true;
+                    }
+
+                    if (!nomHero && element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
+                        nomHero = true;
+
+                    }
+
+                    switch (mots.length) {
+                        case 1:
+                            if (nomHero || prenom || nom) {
+                                estAffiche = true;
+                            }
+                            break;
+                        case 2:
+                            if (nom && prenom || nom && nomHero || prenom && nomHero) {
+                                estAffiche = true;
+                            }
+                            break;
+                        case 3:
+
+                            break;
+                    }
+
+
+
+                    // if (element.nom.toLowerCase().includes(mot.toLowerCase()) || element.prenom.toLowerCase().includes(mot.toLowerCase()) || element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
+                    //     estAffiche = true;
+                    // }
                 }
             });
 
@@ -33,6 +70,10 @@ function rechercher() {
                 document.getElementById("personnage_" + index).style.display = "none";
             }
         });
+    } else {
+        document.tabPersonnages.forEach(function(element, index) {
+            document.getElementById("personnage_" + index).style.display = "none";
+        })
     }
 }
 /**
@@ -44,7 +85,7 @@ function remplirTableauPersonnages(div) {
         var personnage = document.createElement("div");
         personnage.id = "personnage_" + index;
 
-        personnage.innerHTML = '<img src="' + element.photo + ' alt="' + element.toString() + '"">'
+        personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.toString() + '">'
         personnage.innerHTML += '<a href="personnage.html">' + element.toString() + "</a>";
 
         personnage.style.display = "none";

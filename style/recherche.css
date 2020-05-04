@@ -43,5 +43,14 @@ aside {
 }
 
 #page {
-    margin-top: 5%;
+    margin-top: 3%;
+}
+
+#barreRecherche {
+    margin-top: 3%;
+    text-align: center;
+    font-size: large;
+    font-family: "Mha";
+    width: 20vw;
+    height: 4vh;
 }
