@@ -1,0 +1,71 @@
+body {
+    margin: auto;
+}
+
+header{
+    width: 60vw;
+    height: 15vh;
+    background-color:green;
+    font-size: 200%;
+}
+
+#divPrincipal{
+    width: 60vw;
+}
+
+#divImg{
+    width: 200px;
+    height: 200px;
+    margin-top: 2vh;
+    margin-left: 10px;
+    float: left;
+    background-color: grey;
+}
+
+#divNom{
+    width: 30vw;
+    height: 5vh;
+    float: right;
+    background-color: grey;
+    margin-top: 2vh;
+    margin-right: 10px;
+    border-style: solid;
+}
+
+#nom,#prenom,#nomHero{
+    display: inline-block;
+    text-align: center;
+    margin-left: 4.5vw;
+    margin-top: 1vh;
+    font-size: 150%;
+}
+
+#bio {
+    width: 30vw;
+    height: 30vh;
+    margin-top: 3vh;
+    margin-right: 10px;
+    float :right;
+    border-style: solid;
+}
+
+#age,#alter,#fonction{
+    margin-top: 4vh;
+    margin-left: 2vw;
+}
+
+#histoire{
+    height: 30vh;
+    width: 45vw;
+    margin-left: 7vw;
+    margin-top: 2vh;
+    float: left;
+    border-style: solid;
+}
+
+#apparition{
+    width: 40vw;
+    float: left;
+    margin-left: 10vw;
+    margin-top: 2vh;
+}
