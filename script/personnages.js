@@ -21,7 +21,7 @@ class Personnage {
      * @param {array of array} episodes Contient tous les épisodes dans lesquells apparait le personnage sous cette forme : [saison, episode]
      */
     constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episodes) {
-        this.photo = "../Resources/personnages/" + photo;
+        this.photo = "resources/personnages/" + photo;
         this.nom = nom;
         this.prenom = prenom;
         this.nomHero = nomHero;

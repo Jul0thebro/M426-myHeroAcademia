@@ -2,7 +2,7 @@
     font-family: 'Mha';
     font-style: normal;
     font-weight: normal;
-    src: local('Mha'), url('../Resources/Font/mhaFont.woff') format('woff');
+    src: local('Mha'), url('../resources/font/mhaFont.woff') format('woff');
 }
 
 * {
