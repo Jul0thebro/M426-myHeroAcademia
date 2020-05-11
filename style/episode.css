@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Mha';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mha'), url('../resources/font/mhaFont.woff') format('woff');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    text-align: center;
+    font-family: "Mha";
+    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
+}
+
+header {
+    margin-top: 2%;
+    font-size: 50pt;
+}
+
+main {
+    width: 50vw;
+    height: 100vh;
+    float: left;
+}
+
+#imageEpisode {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 50%;
+    margin-left: 30%;
+    padding-right: 2%;
+    padding-bottom: 0.5%;
+}
+
+#imageEpisode img {
+    width: 102%;
+}
+
+#page {
+    margin-top: 3%;
+}
+
+#nom {
+    float: left;
+    margin-top: 7%;
+    font-size: 20pt;
+}
