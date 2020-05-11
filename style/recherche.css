@@ -32,6 +32,28 @@ aside {
     width: 20vw;
 }
 
+h2 {
+    margin-bottom: 4%;
+}
+
+li {
+    margin: 6% 0%;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.tri {
+    padding-left: 16%;
+}
+
+input[type="checkbox"] {
+    margin: 5%;
+    vertical-align: middle;
+} 
+
 #divRecherche img {
     vertical-align: bottom;
     width: 4%;
