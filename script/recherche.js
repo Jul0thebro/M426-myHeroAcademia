@@ -73,13 +73,13 @@ function rechercher(tableau) {
 
             if (estAffiche) {
                 document.getElementById("personnage_" + index).style.display = "block";
-                rajouterTableauPersonnagesAffiches(document.tabPersonnages[index]);
+                rajouterTableauPersonnagesAffiches(tableau[index]);
             } else {
                 document.getElementById("personnage_" + index).style.display = "none";
             }
         });
     } else {
-        document.tabPersonnages.forEach(function(element, index) {
+        tableau.forEach(function(element, index) {
             document.getElementById("personnage_" + index).style.display = "none";
         })
     }
@@ -87,11 +87,15 @@ function rechercher(tableau) {
 /**
  * Remplit le tableau avec tous les personnages
  */
-function remplirTableauPersonnages(div) {
-    document.tabPersonnages.forEach(function(element, index) {
+function remplirTableauPersonnages(div, tableau) {
+
+    affichage.innerHTML = "";
+
+    tableau.forEach(function(element, index) {
 
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
+
 
         lien.href = "detailPersonnage.html";
         affichage.appendChild(lien);
@@ -124,6 +128,6 @@ function viderTableauPersonnagesAffiches() {
     document.personnagesAffiches = new Array();
 }
 
-remplirTableauPersonnages(affichage);
+remplirTableauPersonnages(affichage, document.tabPersonnages);
 
-barreRecherche.addEventListener("keyup", rechercher()); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", function() { rechercher(document.tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
