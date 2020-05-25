@@ -49,3 +49,21 @@ main {
     margin-top: 7%;
     font-size: 20pt;
 }
+
+ul {
+    width: 25%;
+    margin: auto;
+    color: white;
+}
+
+.nomPerso {
+    color: black;
+    font-size: 13pt;
+}
+
+#listePerso {
+    margin-left: 13%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 15pt;
+}

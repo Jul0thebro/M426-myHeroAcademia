@@ -12,11 +12,14 @@ var affichage = document.getElementById("listePersonnages"); // Div dans laquell
 /**
  * Affiche les personnages qui correspondent à la recherche
  */
-function rechercher() {
+function rechercher(tableau) {
     var entree = barreRecherche.value;
 
     if (entree.length != 0) {
-        document.tabPersonnages.forEach(function(element, index) {
+
+        viderTableauPersonnagesAffiches()
+
+        tableau.forEach(function(element, index) {
 
             var mots = entree.split(' ');
             var estAffiche = false;
@@ -70,6 +73,7 @@ function rechercher() {
 
             if (estAffiche) {
                 document.getElementById("personnage_" + index).style.display = "block";
+                rajouterTableauPersonnagesAffiches(document.tabPersonnages[index]);
             } else {
                 document.getElementById("personnage_" + index).style.display = "none";
             }
@@ -86,19 +90,40 @@ function rechercher() {
 function remplirTableauPersonnages(div) {
     document.tabPersonnages.forEach(function(element, index) {
 
+        var lien = document.createElement("a");
         var personnage = document.createElement("div");
+
+        lien.href = "detailPersonnage.html";
+        affichage.appendChild(lien);
+
         personnage.id = "personnage_" + index;
 
         personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.toString() + '">'
-        personnage.innerHTML += '<a href="detailPersonnage.html">' + element.toString() + "</a>";
+        personnage.innerHTML += "<span>" + element.toString() + "</span>";
 
         personnage.style.display = "none";
 
-        affichage.appendChild(personnage);
+        lien.appendChild(personnage);
 
     });
 }
 
+
+/**
+ * Permet de rjouter un personnge dans le tableau qui repertorie quels personnages sont affichés
+ * @param {Personnage} personnage le personnage qui est affiché
+ */
+function rajouterTableauPersonnagesAffiches(personnage) {
+    document.personnagesAffiches.push(personnage);
+}
+
+/**
+ * Vide le tableau des personnages affichée, est fait avant de rechercher
+ */
+function viderTableauPersonnagesAffiches() {
+    document.personnagesAffiches = new Array();
+}
+
 remplirTableauPersonnages(affichage);
 
-barreRecherche.addEventListener("keyup", rechercher); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", rechercher()); /* rajoute l'évenement sur la barre de recherche */

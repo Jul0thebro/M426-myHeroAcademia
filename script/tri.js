@@ -5,7 +5,7 @@
 
 /**
  * Trie les âges de manière croissante
- * @param {array} values valeurs des âges
+ * @param {array of Personnage} values valeurs des âges
  */
 function triAgeCroissant(values) {
     var isSorted = true;
@@ -13,7 +13,7 @@ function triAgeCroissant(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            if (values[index] > values[index + 1]) {
+            if (values[index].age > values[index + 1].age) {
                 var temp = values[index + 1];
                 values[index + 1] = values[index];
                 values[index] = temp;
@@ -47,4 +47,33 @@ function triAgeDecroissant(values) {
     } while (isSorted == false)
 
     return values;
+}
+
+/**
+ * Désactive les autres checkbox du même type
+ * @param {Event} e valeur par rapport à ce qui a appelé l'évenement
+ * @param {int} indexCheckbox le numéro de la checkbox, permet de la retrouver dans le tableau des checkbox du même nom
+ */
+function activerCheckbox(e, indexCheckbox, numeroTri) {
+    var checkboxs = document.getElementsByName(e.target.name);
+
+    checkboxs.forEach(function(element, index) {
+        if (index != indexCheckbox) {
+            element.checked = false;
+        }
+    });
+
+    switch (numeroTri) {
+        case 0:
+
+            break;
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+            break;
+    }
 }

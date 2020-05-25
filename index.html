@@ -19,10 +19,10 @@
         <aside id="gauche">
             <h2>Trier</h2>
             <ul class="tri">
-                <li>Ordre Alphabétique<input type="checkbox" ></li>
-                <li>Ordre Alphabétique (inverse)<input type="checkbox"></li>
-                <li>Age (croissant)<input type="checkbox"></li>
-                <li>Age (décroissant)<input type="checkbox"></li>
+                <li><span>Ordre Alphabétique</span><input type="checkbox" name="ordreAlphabetique" onclick="activerCheckbox(event, 0), 0"></li>
+                <li><span>Ordre Alphabétique (inverse)</span><input type="checkbox" name="ordreAlphabetique" onclick="activerCheckbox(event, 1, 1)"></li>
+                <li><span>Age (croissant)</span><input type="checkbox" name="ordreAge" onclick="activerCheckbox(event, 0, 2)"></li>
+                <li><span>Age (décroissant)</span><input type="checkbox" name="ordreAge" onclick="activerCheckbox(event, 1, 3)"></li>
             </ul>
         </aside>
         <main>

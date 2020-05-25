@@ -10,26 +10,43 @@
     margin: 0px;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     text-align: center;
     font-family: "Mha";
     background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
 }
 
 header {
-    margin-top: 2%;
+    padding-top: 2%;
+    height: 20%;
     font-size: 50pt;
 }
 
 main {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     display: inline-block;
+    overflow-y: scroll;
+    background-color: #0000006b;
 }
 
 aside {
     display: inline-block;
     width: 20vw;
+    height: 100%;
+}
+
+h1 {
+    font-size: 300%;
+    background-color: #000000b8;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 h2 {
@@ -37,7 +54,7 @@ h2 {
 }
 
 li {
-    margin: 6% 0%;
+    margin: 10% 0%;
     text-align: left;
 }
 
@@ -50,9 +67,11 @@ ul {
 }
 
 input[type="checkbox"] {
-    margin: 5%;
+    margin-top: 1%;
+    margin-right: 3%;
+    float: right;
     vertical-align: middle;
-} 
+}
 
 #divRecherche img {
     vertical-align: bottom;
@@ -79,7 +98,8 @@ input[type="checkbox"] {
 }
 
 #page {
-    margin-top: 3%;
+    padding-top: 3%;
+    height: 50%;
 }
 
 #barreRecherche {
@@ -91,6 +111,32 @@ input[type="checkbox"] {
     height: 4vh;
 }
 
+#listePersonnages div {
+    text-align: left;
+    font-size: 200%;
+}
+
 #listePersonnages div img {
     vertical-align: middle;
+    margin-right: 20%;
+}
+
+a:hover div {
+    background-color: #fffdfd85;
+}
+
+a:visited div span {
+    color: white;
+}
+
+a div span {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+li span {
+    display: inline-block;
 }
