@@ -17,7 +17,7 @@ function rechercher(tableau) {
 
     if (entree.length != 0) {
 
-        viderTableauPersonnagesAffiches()
+        // viderTableauPersonnagesAffiches()
 
         tableau.forEach(function(element, index) {
 
@@ -73,7 +73,7 @@ function rechercher(tableau) {
 
             if (estAffiche) {
                 document.getElementById("personnage_" + index).style.display = "block";
-                rajouterTableauPersonnagesAffiches(tableau[index]);
+                // rajouterTableauPersonnagesAffiches(tableau[index]);
             } else {
                 document.getElementById("personnage_" + index).style.display = "none";
             }
@@ -89,7 +89,7 @@ function rechercher(tableau) {
  */
 function remplirTableauPersonnages(div, tableau) {
 
-    affichage.innerHTML = "";
+    div.innerHTML = "";
 
     tableau.forEach(function(element, index) {
 
@@ -98,7 +98,7 @@ function remplirTableauPersonnages(div, tableau) {
 
 
         lien.href = "detailPersonnage.html";
-        affichage.appendChild(lien);
+        div.appendChild(lien);
 
         personnage.id = "personnage_" + index;
 
@@ -113,20 +113,20 @@ function remplirTableauPersonnages(div, tableau) {
 }
 
 
-/**
- * Permet de rjouter un personnge dans le tableau qui repertorie quels personnages sont affichés
- * @param {Personnage} personnage le personnage qui est affiché
- */
-function rajouterTableauPersonnagesAffiches(personnage) {
-    document.personnagesAffiches.push(personnage);
-}
+// /**
+//  * Permet de rjouter un personnge dans le tableau qui repertorie quels personnages sont affichés
+//  * @param {Personnage} personnage le personnage qui est affiché
+//  */
+// function rajouterTableauPersonnagesAffiches(personnage) {
+//     document.personnagesAffiches.push(personnage);
+// }
 
-/**
- * Vide le tableau des personnages affichée, est fait avant de rechercher
- */
-function viderTableauPersonnagesAffiches() {
-    document.personnagesAffiches = new Array();
-}
+// /**
+//  * Vide le tableau des personnages affichée, est fait avant de rechercher
+//  */
+// function viderTableauPersonnagesAffiches() {
+//     document.personnagesAffiches = new Array();
+// }
 
 remplirTableauPersonnages(affichage, document.tabPersonnages);
 

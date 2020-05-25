@@ -36,7 +36,7 @@ function triAgeDecroissant(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            if (values[index] < values[index + 1]) {
+            if (values[index].age < values[index + 1].age) {
                 var temp = values[index + 1];
                 values[index + 1] = values[index];
                 values[index] = temp;
@@ -57,23 +57,30 @@ function triAgeDecroissant(values) {
 function activerCheckbox(e, indexCheckbox, numeroTri) {
     var checkboxs = document.getElementsByName(e.target.name);
 
-    checkboxs.forEach(function(element, index) {
+    checkboxs.forEach(function (element, index) {
         if (index != indexCheckbox) {
             element.checked = false;
         }
     });
 
-    switch (numeroTri) {
-        case 0:
+    if (e.target.checked == true) {
+        switch (numeroTri) {
+            case 0:
 
-            break;
-        case 1:
+                break;
+            case 1:
 
-            break;
-        case 2:
-
-            break;
-        case 3:
-            break;
+                break;
+            case 2:
+                document.tabPersonnages = triAgeCroissant(document.tabPersonnagesOriginal).slice();
+                break;
+            case 3:
+                document.tabPersonnages = triAgeDecroissant(document.tabPersonnagesOriginal).slice();
+                break;
+        }
+    } else {
+        document.tabPersonnages = document.tabPersonnagesOriginal.slice();
     }
+    remplirTableauPersonnages(affichage, document.tabPersonnages);
+    rechercher(document.tabPersonnages)
 }
