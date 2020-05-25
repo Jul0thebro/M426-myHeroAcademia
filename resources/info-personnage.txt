@@ -1,0 +1,64 @@
+Saison 1 :
+
+	Prénom		Nom		Age		Métier		  Surnom		Alter
+
+	Izuku		Midoriya 	 15		Apprentie héros   Deku			One for All
+	Bakugo		Katsuki 	 15 		Apprentie héros	  Aucun			Explosion
+	Nishiya 	Shinji 		  ? 		Héro pro	  Le dieu Sylvestre	Bois
+	Inko		Midoriya 	  ?		    ?		  Aucun			Télékinésie légère
+	Desutegoro      ?		  ?		Héro pro	  Bare Handeat		?
+	Takeyama        Yu		 23 		Héro pro	  Mount Lady		Gigantisme
+	Bakkudorafuto   ?    		  ? 		Héro pro	  Backdraft		Eau...
+	Yamada 		Hizashi          30 		Héro professeur   Present Mic   	Voix
+	Ochaco 		Uraraka		 15 		Apprentie héros	  Uravity		Zéro Gravity
+	Tenya		Ida 		 15		Apprentie héros	  ? 			Moteur/Engine
+	Nezu 		? 		  ?		Proviseur UA      Proviseur		Haute performance     
+	Ekutopurazumu   ?		 41 		Héro professeur   Ectoplasm		Clonage
+	Ishiyama 	Ken		  ?		Héro professeur   Cementos		Ciment	
+	Yuga 		Aoyama		 15 		Apprentie héros	  Shining hero		nombril laser
+	Chiyo 		Shuzenji 	  ? 		Infirmière	  Recovery girl 	Récupération
+	Aizawa 		Shota		 30  		Héro professeur   Eraser Head		Effacement
+	Mina 		Ashido 		 15 		Apprentie héros	  Pinkie 		Acide
+	Asuyu           Tsuyu		 15		Apprentie héros	  Froppy 		Grenouille
+	Ojiro 		Mashirao         15 		Apprentie héros	  Tail man 		Queue/tail
+	Denki 		Kaminari 	 15 		Apprentie héros	  Chargéclair		éléctricité
+	Eijiro 		Kirishima        15 		Apprentie héros	  Red Riot 	 	Durcissement
+	Koda 		Koji             15 		Apprentie héros	  Anima 		La voix du vivant
+	Sato 		Rikido 		 15 		Apprentie héros	  Sugar man 		Sugar dope 
+	Shoji 		Mezo 		 15 		Apprentie héros	  Tentapoulpe		Bras cloneur
+	Kyoka 		Jiro 		 15 		Apprentie héros	  L'héroine audio 	Earphone jack
+	Sero 		Hanta    	 15 		Apprentie héros	  Cellophane 		Ruban Adhésif
+	Fumikage        Tokoyami         15 		Apprentie héros	  Tsukuyomi 		Dark Shadow
+        Shoto 		Todoroki         15 		Apprentie héros	  Aucun 		Glace et feu
+	Toru 		Hagakure 	 15 		Apprentie héros	  Invisible Girl 	Invisibilité
+	Mineta 		Minoru 		 15             Apprentie héros	  Grape Juice 		Boing Boing
+	Momo 	 	Yaoyorozu	 15 		Apprentie héros	  Creaty 		Création
+	Ranchi-Rasshu   ? 		  ? 		Apprentie héros	  Lunch Rush		?
+	Tensei   	Ida 		 15 		Apprentie héros	  Ingenium		Engine
+	Supesu Hiro 	Ju-san go	 28 		Apprentie héros	  Numero 13 		Trou noir
+	Shigaraki 	Tomura 		 20 		Apprentie héros	  ?			Désintégration
+	Brainless 	Noir		 ?		Villain 	  Nomu			Super régénération/Absorption des chocs
+	Kurogiri	?		 ?		Villain  	  Kurogiri		Portail
+	Nemuri 		Kayama 		 31 		Héro professeur   Midnight 		Parfum soporifique
+	Sunaipu		?		 ? 		Héro professeur	  Snipe 		Tête chercheuse
+	Kan 		Sekijiro  	 30 		Héro professeur	  Vlad King 		Manipulation du sang
+	Higari 		Maijima		 41		Héro professeur	  Power Loader 		Ongle d'acier
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
