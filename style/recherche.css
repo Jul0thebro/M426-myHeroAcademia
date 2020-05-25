@@ -43,10 +43,12 @@ aside {
 
 h1 {
     font-size: 300%;
-    background-color: #000000b8;
+    background-color: #000000;
     color: white;
     padding-top: 1%;
     padding-bottom: 1%;
+    width:inherit;
+    position:fixed;
 }
 
 h2 {
@@ -119,6 +121,10 @@ input[type="checkbox"] {
 #listePersonnages div img {
     vertical-align: middle;
     margin-right: 20%;
+}
+
+#listePersonnages{
+    margin-top: 7vh;
 }
 
 a:hover div {
