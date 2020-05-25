@@ -1,0 +1,159 @@
+Première apparition de chaque personnage
+S1-{
+	EP-1 : {
+		Izuku Mydoria
+		All might
+		Bakugo
+		Dieu Sylvestre
+		Mère d'Izuku
+		Bare Handeath
+		Mount Lady
+		BackDraft
+		méchant avec alter de gigantisme
+		Méchant liquide
+		}
+	EP-2 : {
+		rien
+		}
+	EP-3 : {
+		Present mic
+		Ochaco
+		Tenya
+		robot 1p
+		robot 2p
+		robot 3p
+		robot 0p
+		}
+
+	EP-4 : {
+		Directeur UA - Nezu
+		Ectoplasm
+		Cementos
+		Yuga
+		Recovery girl
+		}
+
+	EP-5 : {
+		Aizawa sensei
+		Le reste de la classe 1-A
+		}
+	EP-6 : {
+		Lunch rush
+		Tout les élèves de la classe 1-A avec leurs costumes de super-héros
+		
+		}
+	EP-7 : {
+		Rien
+		}
+	EP-8 : {
+		Rien
+		}
+	EP-9 : {
+		méchant rose
+		La troupe de journalistes
+		Iiada parle de son grand frère Ingenium
+		Numéro 13/ Thirteen
+		Plusieurs villains lambda 
+		Shigaraki
+		Brainless noir fait pour battre all might
+		kurogiri
+		Midnight
+		}
+	EP-10 : {
+		Ligue des villains déclaré
+		méchant lambda
+		}
+	EP-11 : {
+		rien
+		
+		}
+	EP-12 : {
+		rien
+		
+		}
+	EP-13 : {
+		Ectoplasm
+		snipe
+		Power loader
+		Vlad King
+		}
+}
+S2-{
+	EP-1 {
+		Rien
+		}
+	EP-2 {
+		plein de héros de la filière générale 
+		Hitoshi Shinso
+		}
+	EP-3 {
+		Mei Hatsume
+		élève de filière économique
+		}
+	EP-4 {
+		Rien
+		}
+	EP-5 {
+		Rien
+		}
+	EP-6 {
+		Rien
+		}
+	EP-7 {
+		Rien
+		}
+	EP-8 {
+		Rien
+		}
+	EP-9 {
+		Rien
+		}
+	EP-10 {
+		Rien
+		}
+	EP-11 {
+		Rien
+		}
+	EP-12 {
+		Rien
+		}
+	EP-13 {
+		Rien
+		}
+	EP-14 {
+		Rien
+		}
+	EP-15 {
+		
+		}
+	EP-16 {
+		
+		}
+	EP-17 {
+		
+		}
+	EP-18 {
+		Rien
+		}
+	EP-19 {
+		Rien
+		}
+	EP-20 {
+		Rien
+		}
+	EP-21 {
+		Rien
+		}
+	EP-22 {
+		Rien
+		}
+	EP-23 {
+		Rien
+		}
+	EP-24 {
+		Rien
+		}
+	EP-25 {
+		Rien
+		}
+
