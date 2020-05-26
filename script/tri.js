@@ -72,10 +72,10 @@ function activerCheckbox(e, indexCheckbox, numeroTri) {
 
                 break;
             case 2:
-                document.tabPersonnages = triAgeCroissant(document.tabPersonnagesOriginal).slice();
+                document.tabPersonnages = triAgeCroissant(document.tabPersonnagesOriginal.slice());
                 break;
             case 3:
-                document.tabPersonnages = triAgeDecroissant(document.tabPersonnagesOriginal).slice();
+                document.tabPersonnages = triAgeDecroissant(document.tabPersonnagesOriginal.slice());
                 break;
         }
     } else {
