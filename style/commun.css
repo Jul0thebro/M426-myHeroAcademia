@@ -23,6 +23,8 @@ html {
 body {
     height:100%;
     width:100%;
+    margin: auto;
+
     font-family: "Mha";
     background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
 }
@@ -30,6 +32,7 @@ body {
 header {
     padding-top: 1%;
     padding-bottom:1%;
+    text-align: center;
     height:20%;
     width:100%;
 }
