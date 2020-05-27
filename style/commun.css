@@ -1,0 +1,27 @@
+/*
+// Projet    :   My Hero Academia
+// Auteur    :   Ludovic Roux
+// Desc.     :   Css qui est commun à toutes les pages
+// Version   :   1.0, 27.05.2020, LR, version initiale
+*/
+@font-face {
+    font-family: 'Mha';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mha'), url('../resources/font/mhaFont.woff') format('woff');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    height:100%;
+    font-family: "Mha";
+    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
+}

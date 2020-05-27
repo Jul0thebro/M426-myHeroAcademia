@@ -1,6 +1,6 @@
 body {
+    width: fit-content;
     margin: auto;
-    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
 }
 
 header {
