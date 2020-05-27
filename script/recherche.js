@@ -3,7 +3,6 @@
 // Desc.     :   Système qui permet de rechercher un personnage
 // Version   :   1.0, 27.04.2020, LR, version initiale
 
-
 // Création des variables
 var barreRecherche = document.getElementById("barreRecherche"); // Input de la barre de recherche
 var affichage = document.getElementById("listePersonnages"); // Div dans laquelle est affiché le lien vers le personnage
@@ -19,7 +18,7 @@ function rechercher(tableau) {
 
         // viderTableauPersonnagesAffiches()
 
-        tableau.forEach(function(element, index) {
+        tableau.forEach(function (element, index) {
 
             var mots = entree.split(' ');
             var estAffiche = false;
@@ -73,13 +72,12 @@ function rechercher(tableau) {
 
             if (estAffiche) {
                 document.getElementById("personnage_" + index).style.display = "block";
-                // rajouterTableauPersonnagesAffiches(tableau[index]);
             } else {
                 document.getElementById("personnage_" + index).style.display = "none";
             }
         });
     } else {
-        tableau.forEach(function(element, index) {
+        tableau.forEach(function (element, index) {
             document.getElementById("personnage_" + index).style.display = "none";
         })
     }
@@ -91,19 +89,21 @@ function remplirTableauPersonnages(div, tableau) {
 
     div.innerHTML = "";
 
-    tableau.forEach(function(element, index) {
+    tableau.forEach(function (element, index) {
 
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
 
 
         lien.href = "detailPersonnage.html";
+        lien.addEventListener("click", function () { changerPage(document.tabPersonnages[index]) })
+
         div.appendChild(lien);
 
         personnage.id = "personnage_" + index;
 
-        personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.toString() + '">'
-        personnage.innerHTML += "<span>" + element.toString() + "</span>";
+        personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.ecrireNom() + '">'
+        personnage.innerHTML += "<span>" + element.ecrireNom() + "</span>";
 
         personnage.style.display = "none";
 
@@ -113,21 +113,14 @@ function remplirTableauPersonnages(div, tableau) {
 }
 
 
-// /**
-//  * Permet de rjouter un personnge dans le tableau qui repertorie quels personnages sont affichés
-//  * @param {Personnage} personnage le personnage qui est affiché
-//  */
-// function rajouterTableauPersonnagesAffiches(personnage) {
-//     document.personnagesAffiches.push(personnage);
-// }
-
-// /**
-//  * Vide le tableau des personnages affichée, est fait avant de rechercher
-//  */
-// function viderTableauPersonnagesAffiches() {
-//     document.personnagesAffiches = new Array();
-// }
+/**
+ * Permet de mettre les données dans le local storage pour afficher la bonne page de personnage
+ * @param {Personnage} personnageChoisi Personnage que l'utilisateur a choisi
+ */
+function changerPage(personnageChoisi) {
+    localStorage.setItem("personnageChoisi", personnageChoisi);
+}
 
 remplirTableauPersonnages(affichage, document.tabPersonnages);
 
-barreRecherche.addEventListener("keyup", function() { rechercher(document.tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", function () { rechercher(document.tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */

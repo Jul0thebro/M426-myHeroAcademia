@@ -24,6 +24,12 @@ body {
     font-family: "Mha";
     width: 20vw;
     height: 4vh;
+    transition:width 1s;
+}
+
+input#barreRecherche:hover {
+    width: 50%;
+    transition: width 1s;
 }
 
 #aileDroite {

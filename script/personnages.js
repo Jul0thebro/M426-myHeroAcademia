@@ -18,9 +18,9 @@ class Personnage {
      * @param {string} alter contient le nom de l'alter : la description, peut être nul
      * @param {string} metier nom du métier de la personne / petite description
      * @param {string} histoire Histoire du personange
-     * @param {array of array} episodes Contient tous les épisodes dans lesquells apparait le personnage sous cette forme : [saison, episode]
+     * @param {Array} episode Contient la première apparition du personnage : [saison, episode]
      */
-    constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episodes) {
+    constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episode) {
         this.photo = "resources/personnages/" + photo;
         this.nom = nom;
         this.prenom = prenom;
@@ -29,11 +29,15 @@ class Personnage {
         this.alter = alter;
         this.metier = metier;
         this.histoire = histoire;
-        this.episodes = episodes;
+        this.episode = episode;
     }
 
     toString() {
-        return this.prenom + " " + this.nom + " " + this.nomHero;
+        return this.photo + ";" + this.nom  + ";" +this.prenom + ";" + this.nomHero + ";" + this.age + ";" + this.alter + ";" + this.metier + ";" + this.histoire + ";" + this.episode;
+    }
+
+    ecrireNom() { 
+        return  this.prenom + " " + this.nom + " " + this.nomHero;
     }
 }
 
