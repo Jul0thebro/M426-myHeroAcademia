@@ -3,13 +3,12 @@ body {
 }
 
 header {
-    margin-top: 2%;
     font-size: 50pt;
 }
 
 main {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     float: left;
 }
 

@@ -1,17 +1,79 @@
+/*
+// Projet    :   My Hero Academia
+// Auteur    :   Juliano Souza Luz,Ludovic Roux
+// Desc.     :   CSS de la page pour rechercher
+// Version   :   1.0, 27.05.2020, JSL, LR, version initiale
+*/
 body {
     text-align: center;
 }
 
 header {
-    padding-top: 2%;
     height: 20%;
-    font-size: 50pt;
+}
+
+#divRecherche img {
+    vertical-align: bottom;
+    width: 4%;
+    height: 8%;
+}
+
+#aileGauche {
+    transform: translateX(2.5vw);
+}
+
+#barreRecherche {
+    margin-top: 3%;
+    text-align: center;
+    font-size: large;
+    font-family: "Mha";
+    width: 20vw;
+    height: 4vh;
+}
+
+#aileDroite {
+    transform: translateX(-2.5vw);
+}
+
+#page {
+    padding-top: 3%;
+    height: 50%;
+}
+
+#gauche {
+    border-right: 3px solid black;
+    float: left;
+}
+
+.tri {
+    padding-left: 16%;
 }
 
 main {
     width: 50vw;
     height: 100%;
     display: inline-block;    
+}
+
+#listePersonnages{
+    background-color: #0000006b;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#listePersonnages div {
+    text-align: left;
+    font-size: 200%;
+}
+
+#listePersonnages div img {
+    vertical-align: middle;
+    margin-right: 20%;
+}
+
+#droite {
+    border-left: 3px solid black;
+    float: right;
 }
 
 aside {
@@ -33,17 +95,17 @@ h2 {
     margin-bottom: 4%;
 }
 
+ul {
+    list-style-type: none;
+}
+
 li {
     margin: 10% 0%;
     text-align: left;
 }
 
-ul {
-    list-style-type: none;
-}
-
-.tri {
-    padding-left: 16%;
+li span {
+    display: inline-block;
 }
 
 input[type="checkbox"] {
@@ -51,60 +113,6 @@ input[type="checkbox"] {
     margin-right: 3%;
     float: right;
     vertical-align: middle;
-}
-
-#divRecherche img {
-    vertical-align: bottom;
-    width: 4%;
-    height: 8%;
-}
-
-#aileGauche {
-    transform: translateX(2.5vw);
-}
-
-#aileDroite {
-    transform: translateX(-2.5vw);
-}
-
-#gauche {
-    border-right: 3px solid black;
-    float: left;
-}
-
-#droite {
-    border-left: 3px solid black;
-    float: right;
-}
-
-#page {
-    padding-top: 3%;
-    height: 50%;
-}
-
-#barreRecherche {
-    margin-top: 3%;
-    text-align: center;
-    font-size: large;
-    font-family: "Mha";
-    width: 20vw;
-    height: 4vh;
-}
-
-#listePersonnages div {
-    text-align: left;
-    font-size: 200%;
-}
-
-#listePersonnages div img {
-    vertical-align: middle;
-    margin-right: 20%;
-}
-
-#listePersonnages{
-    background-color: #0000006b;
-    overflow-y: scroll;
-    height: 100%;
 }
 
 a:hover div {
@@ -121,8 +129,4 @@ a div span {
 
 a {
     text-decoration: none;
-}
-
-li span {
-    display: inline-block;
 }
