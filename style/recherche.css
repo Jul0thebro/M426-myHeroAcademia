@@ -8,10 +8,6 @@ body {
     text-align: center;
 }
 
-header {
-    height: 20%;
-}
-
 #divRecherche img {
     vertical-align: bottom;
     width: 4%;
@@ -23,7 +19,6 @@ header {
 }
 
 #barreRecherche {
-    margin-top: 3%;
     text-align: center;
     font-size: large;
     font-family: "Mha";
@@ -64,11 +59,13 @@ main {
 #listePersonnages div {
     text-align: left;
     font-size: 200%;
+    height: 20%;
 }
 
 #listePersonnages div img {
     vertical-align: middle;
     margin-right: 20%;
+    height:100%;
 }
 
 #droite {

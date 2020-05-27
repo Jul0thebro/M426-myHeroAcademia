@@ -5,12 +5,13 @@ body {
 
 header {
     text-align: center;
-    width: 60vw;
-    font-size: 200%;
 }
 
 #divPrincipal {
-    width: 60vw;
+    width: 60%;
+    height: 75%;
+    overflow-y: scroll;
+    margin:auto;
 }
 
 #divNom {
