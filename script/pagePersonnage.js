@@ -79,4 +79,4 @@ function afficherPersonnage() {
     }
 }
 
-// afficherPersonnage();
+afficherPersonnage();

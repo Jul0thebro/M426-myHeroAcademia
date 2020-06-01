@@ -3,6 +3,8 @@
 // Desc.     :   Système de tri
 // Version   :   1.0, 20.04.2020, LR, version initiale
 
+const NOM_CLASSE_CHECKBOX_TRI = "checkboxTri";
+
 /**
  * Trie les âges de manière croissante
  * @param {array of Personnage} values valeurs des âges
@@ -14,9 +16,8 @@ function triAgeCroissant(values) {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
             if (values[index].age > values[index + 1].age) {
-                var temp = values[index + 1];
-                values[index + 1] = values[index];
-                values[index] = temp;
+
+                echangerValue(values, index);
 
                 isSorted = false;
             }
@@ -28,7 +29,7 @@ function triAgeCroissant(values) {
 
 /**
  * Trie les âges de manière décroissante
- * @param {array} values valeurs des âges
+ * @param {array of Personnage} values valeurs des âges
  */
 function triAgeDecroissant(values) {
     var isSorted = true;
@@ -37,9 +38,8 @@ function triAgeDecroissant(values) {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
             if (values[index].age < values[index + 1].age) {
-                var temp = values[index + 1];
-                values[index + 1] = values[index];
-                values[index] = temp;
+
+                echangerValue(values, index);
 
                 isSorted = false;
             }
@@ -50,11 +50,84 @@ function triAgeDecroissant(values) {
 }
 
 /**
+ * Trie les personnages dans l'ordre alphabétique
+ * @param {array of Personnage} values 
+ */
+function triOrdreAlphabetique(values) {
+    var isSorted = true;
+
+    do {
+        isSorted = true;
+        for (let index = 0; index < values.length - 1; index++) {
+            if (values[index].nom.localeCompare(values[index + 1].nom) == 1) {
+
+                echangerValue(values, index);
+
+                isSorted = false;
+            }
+        }
+    } while (isSorted == false)
+
+    return values;
+}
+
+/**
+ * Trie les personnages dans l'ordre alphabétique inverse
+ * @param {array of Personnage} values 
+ */
+function triOrdreAlphabetiqueInverse(values) {
+    var isSorted = true;
+
+    do {
+        isSorted = true;
+        for (let index = 0; index < values.length - 1; index++) {
+            if (values[index].nom.localeCompare(values[index + 1].nom) == -1) {
+
+                echangerValue(values, index);
+
+                isSorted = false;
+            }
+        }
+    } while (isSorted == false)
+
+    return values;
+}
+
+/**
+ * Permet d'interchanger deux entrées de tableau consécutif à aprtir d'un index donné
+ * @param {array} tableau tableau qui contient les deux valeurs à changer
+ * @param {Int} index index auquel commence l'échange
+ */
+function echangerValue(tableau, index) {
+    var temp = tableau[index + 1]
+    tableau[index + 1] = tableau[index];
+    tableau[index] = temp;
+}
+
+function effectuerTri(checkboxs) {
+    document.tabPersonnages = document.tabPersonnagesOriginal.slice();
+
+    // Boutons de tri pou l0ordre alphabétique
+    if (checkboxs[0].checked == true) {
+        document.tabPersonnages = triOrdreAlphabetique(document.tabPersonnages.slice());
+    } else if (checkboxs[1].checked == true) {
+        document.tabPersonnages = triOrdreAlphabetiqueInverse(document.tabPersonnages.slice());
+    }
+
+    if (checkboxs[2].checked == true) {
+        document.tabPersonnages = triAgeCroissant(document.tabPersonnages.slice());
+    } else if (checkboxs[3].checked == true) {
+        document.tabPersonnages = triAgeDecroissant(document.tabPersonnages.slice());
+    }
+}
+
+/**
  * Désactive les autres checkbox du même type
  * @param {Event} e valeur par rapport à ce qui a appelé l'évenement
  * @param {int} indexCheckbox le numéro de la checkbox, permet de la retrouver dans le tableau des checkbox du même nom
  */
 function activerCheckbox(e, indexCheckbox, numeroTri) {
+    var allCheckboxs = document.getElementsByClassName(NOM_CLASSE_CHECKBOX_TRI);
     var checkboxs = document.getElementsByName(e.target.name);
 
     checkboxs.forEach(function (element, index) {
@@ -63,24 +136,7 @@ function activerCheckbox(e, indexCheckbox, numeroTri) {
         }
     });
 
-    if (e.target.checked == true) {
-        switch (numeroTri) {
-            case 0:
-
-                break;
-            case 1:
-
-                break;
-            case 2:
-                document.tabPersonnages = triAgeCroissant(document.tabPersonnagesOriginal.slice());
-                break;
-            case 3:
-                document.tabPersonnages = triAgeDecroissant(document.tabPersonnagesOriginal.slice());
-                break;
-        }
-    } else {
-        document.tabPersonnages = document.tabPersonnagesOriginal.slice();
-    }
+    effectuerTri(allCheckboxs);
     remplirTableauPersonnages(affichage, document.tabPersonnages);
     rechercher(document.tabPersonnages)
 }

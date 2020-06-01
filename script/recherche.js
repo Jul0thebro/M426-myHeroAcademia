@@ -122,5 +122,6 @@ function changerPage(personnageChoisi) {
 }
 
 remplirTableauPersonnages(affichage, document.tabPersonnages);
+rechercher(document.tabPersonnages);
 
 barreRecherche.addEventListener("keyup", function () { rechercher(document.tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
