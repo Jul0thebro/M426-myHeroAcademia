@@ -39,6 +39,7 @@ input#barreRecherche:hover {
 #page {
     padding-top: 3%;
     height: 50%;
+    display: flex;
 }
 
 #gauche {
@@ -51,15 +52,18 @@ input#barreRecherche:hover {
 }
 
 main {
-    width: 50vw;
+    width: 60vw;
     height: 100%;
     display: inline-block;    
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 #listePersonnages{
     background-color: #0000006b;
     overflow-y: scroll;
     height: 99%;
+    box-shadow: #0000004a 0px 3px 14px 4px;
 }
 
 #listePersonnages div {
@@ -81,7 +85,7 @@ main {
 
 aside {
     display: inline-block;
-    width: 20vw;
+    width: 20%;
     height: 100%;
 }
 
@@ -92,6 +96,7 @@ h1 {
     padding-top: 1%;
     padding-bottom: 1%;
     width:inherit;
+    box-shadow: #0000004a 0px 12px 14px 0px;
 }
 
 h2 {
