@@ -45,6 +45,14 @@ var tabPersonnages = [
     new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 16, "One For All", "Héro", "A remplir", "A remplir"),
     new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 16, "A remplir", "Héro", "A remplir", "A remplir"),
     new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
+    new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir"),
     new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir")
 ]
 

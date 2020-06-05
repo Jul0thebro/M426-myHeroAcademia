@@ -25,6 +25,7 @@ body {
     width: 20vw;
     height: 4vh;
     transition:width 1s;
+    box-shadow: #0000004a 0px 3px 14px 4px;
 }
 
 input#barreRecherche:hover {
@@ -45,10 +46,15 @@ input#barreRecherche:hover {
 #gauche {
     border-right: 3px solid black;
     float: left;
+    margin-left:1%;
 }
 
 .tri {
     padding-left: 16%;
+}
+
+.filtre {
+    padding-right:16%;
 }
 
 main {
@@ -81,12 +87,15 @@ main {
 #droite {
     border-left: 3px solid black;
     float: right;
+    margin-right:1%;
 }
 
 aside {
     display: inline-block;
     width: 20%;
     height: 100%;
+    box-shadow: #00000021 0px 20px 20px 3px;
+    margin-top: 2%;
 }
 
 h1 {
@@ -100,17 +109,27 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 4%;
+    padding-bottom: 5%;
+    padding-top: 5%;
     font-size:200%;
+    background-color: black;
+    color: white;
 }
 
 ul {
     list-style-type: none;
 }
 
+.tri li {
+    text-align: left;
+}
+
+.filtre li {
+    text-align:right;
+}
+
 li {
     margin: 10% 0%;
-    text-align: left;
 }
 
 li span {
@@ -120,10 +139,20 @@ li span {
 }
 
 input[type="checkbox"] {
+    width: 10%;
     margin-top: 1%;
+}
+
+.tri li input
+ {
     margin-right: 3%;
     float: right;
-    width: 10%;
+}
+
+.filtre li input
+ {
+    margin-left: 3%;
+    float: left;
 }
 
 a:hover div {
