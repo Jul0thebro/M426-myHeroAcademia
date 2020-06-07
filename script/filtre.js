@@ -5,6 +5,9 @@
 
 const NOM_CLASSE_CHECKBOX_FILTRE = "checkboxFiltre";
 
+/**
+ * Permet de faire appliquer les filtres qui sont activés
+ */
 function appuyerFiltre() {
     var checkboxsFiltre = document.getElementsByClassName(NOM_CLASSE_CHECKBOX_FILTRE);
     var filtresAppliques = [];
@@ -13,7 +16,7 @@ function appuyerFiltre() {
 
     for (let index = 0; index < checkboxsFiltre.length; index++) {
         if (checkboxsFiltre[index].checked) {
-            filtresAppliques.push(TAG_SEXE_CODE[index]);
+            filtresAppliques.push(TAG_SEXE[index]);
         }
     }
 

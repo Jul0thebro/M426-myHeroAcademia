@@ -43,16 +43,13 @@ class Personnage {
 }
 
 const TAG_SEXE = {
+    0: "H",
     "HOMME": "H",
+    1: "F",
     "FEMME": "F",
+    2: "I",
     "INDETERMINE": "I"
 }
-
-const TAG_SEXE_CODE = [
-    "H",
-    "F",
-    "I"
-]
 
 var tabPersonnages = [
     new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 16, "One For All", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),

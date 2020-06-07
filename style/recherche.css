@@ -20,7 +20,7 @@ body {
 
 #barreRecherche {
     text-align: center;
-    font-size: x-large;
+    font-size: larger;
     font-family: "Mha";
     width: 20vw;
     height: 4vh;
@@ -48,12 +48,16 @@ input#barreRecherche:hover {
     margin-left: 1%;
 }
 
-.tri {
+.tri li {
     padding-left: 16%;
 }
 
-.filtre {
+.filtre li {
     padding-right: 16%;
+}
+
+li:hover {
+    background-color: #00000038;
 }
 
 main {
@@ -129,29 +133,32 @@ ul {
 }
 
 li {
-    margin: 10% 0%;
+    padding: 7% 0%;
+    display: flex;
+    align-items: center;
     user-select: none;
 }
 
-li span {
-    font-size: 120%;
-    width: 80%;
-    display: inline-block;
+li label {
+    font-size: 110%;
+    flex: 90%
+}
+
+li * {
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
-    width: 10%;
+    flex: 10%;
     margin-top: 1%;
 }
 
 .tri li input {
     margin-right: 3%;
-    float: right;
 }
 
 .filtre li input {
     margin-left: 3%;
-    float: left;
 }
 
 a:hover div {
@@ -171,6 +178,9 @@ a {
 }
 
 @media (max-width:900px) {
+    body {
+        font-size: smaller;
+    }
     #page {
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -191,9 +201,15 @@ a {
         flex: 40%;
         max-width: 40%;
         margin-bottom: 2vh;
-        height: 74%;
+        height: auto;
     }
     #divRecherche img {
         width: 8%;
+    }
+}
+
+@media (max-width:500px) {
+    body{
+        font-size: x-small;
     }
 }

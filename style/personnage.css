@@ -32,7 +32,7 @@
 }
 
 #divNom {
-    width: 30vw;
+    width: 80%;
     /* height: 5vh; */
     float: right;
     background-color: grey;
@@ -52,7 +52,7 @@
 }
 
 #bio {
-    width: 30vw;
+    width: 80%;
     height: 30vh;
     margin-top: 3vh;
     /* margin-right: 10px; */
@@ -67,13 +67,19 @@
 
 #histoire {
     height: 30vh;
-    width: 45vw;
+    width: 80%;
     margin: auto;
     border-style: solid;
 }
 
 #apparition {
-    width: 40vw;
+    width: 80%;
     margin: auto;
     margin-top: 2vh;
+}
+
+@media (max-width:1000px) {
+    #divPrincipal {
+        width: 90%;
+    }
 }
