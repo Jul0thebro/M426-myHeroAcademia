@@ -180,6 +180,7 @@ a {
 @media (max-width:900px) {
     body {
         font-size: smaller;
+        background-size: 100% 200%;
     }
     #page {
         flex-wrap: wrap;
