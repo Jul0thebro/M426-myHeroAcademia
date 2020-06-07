@@ -12,7 +12,6 @@ body {
 #divRecherche img {
     vertical-align: bottom;
     width: 4%;
-    height: 8%;
 }
 
 #aileGauche {
@@ -68,7 +67,7 @@ main {
 #listePersonnages {
     background-color: #0000006b;
     overflow-y: scroll;
-    height: 99%;
+    height: 100%;
     box-shadow: #0000004a 0px 3px 14px 4px;
 }
 
@@ -131,6 +130,7 @@ ul {
 
 li {
     margin: 10% 0%;
+    user-select: none;
 }
 
 li span {
@@ -170,7 +170,7 @@ a {
     text-decoration: none;
 }
 
-@media (max-width:1000px) {
+@media (max-width:900px) {
     #page {
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -192,5 +192,8 @@ a {
         max-width: 40%;
         margin-bottom: 2vh;
         height: 74%;
+    }
+    #divRecherche img {
+        width: 8%;
     }
 }

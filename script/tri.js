@@ -105,19 +105,19 @@ function echangerValue(tableau, index) {
 }
 
 function effectuerTri(checkboxs) {
-    document.tabPersonnages = document.tabPersonnagesOriginal.slice();
+    tabPersonnages = tabPersonnagesOriginal.slice();
 
     // Boutons de tri pou l0ordre alphabétique
     if (checkboxs[0].checked == true) {
-        document.tabPersonnages = triOrdreAlphabetique(document.tabPersonnages.slice());
+        tabPersonnages = triOrdreAlphabetique(tabPersonnages.slice());
     } else if (checkboxs[1].checked == true) {
-        document.tabPersonnages = triOrdreAlphabetiqueInverse(document.tabPersonnages.slice());
+        tabPersonnages = triOrdreAlphabetiqueInverse(tabPersonnages.slice());
     }
 
     if (checkboxs[2].checked == true) {
-        document.tabPersonnages = triAgeCroissant(document.tabPersonnages.slice());
+        tabPersonnages = triAgeCroissant(tabPersonnages.slice());
     } else if (checkboxs[3].checked == true) {
-        document.tabPersonnages = triAgeDecroissant(document.tabPersonnages.slice());
+        tabPersonnages = triAgeDecroissant(tabPersonnages.slice());
     }
 }
 
@@ -126,7 +126,7 @@ function effectuerTri(checkboxs) {
  * @param {Event} e valeur par rapport à ce qui a appelé l'évenement
  * @param {int} indexCheckbox le numéro de la checkbox, permet de la retrouver dans le tableau des checkbox du même nom
  */
-function activerCheckbox(e, indexCheckbox, numeroTri) {
+function activerCheckbox(e, indexCheckbox) {
     var allCheckboxs = document.getElementsByClassName(NOM_CLASSE_CHECKBOX_TRI);
     var checkboxs = document.getElementsByName(e.target.name);
 
@@ -137,6 +137,7 @@ function activerCheckbox(e, indexCheckbox, numeroTri) {
     });
 
     effectuerTri(allCheckboxs);
-    remplirTableauPersonnages(affichage, document.tabPersonnages);
-    rechercher(document.tabPersonnages)
+    remplirTableauPersonnages(affichage, tabPersonnages);
+    appuyerFiltre();
+    rechercher(tabPersonnages);
 }

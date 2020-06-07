@@ -70,7 +70,7 @@ function rechercher(tableau) {
                 }
             });
 
-            if (estAffiche) {
+            if (estAffiche && document.getElementById("personnage_" + index).estDansFiltre) {
                 document.getElementById("personnage_" + index).style.display = "block";
             } else {
                 document.getElementById("personnage_" + index).style.display = "none";
@@ -102,6 +102,8 @@ function remplirTableauPersonnages(div, tableau) {
 
         personnage.id = "personnage_" + index;
 
+        personnage.estDansFiltre = true;
+
         personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.ecrireNom() + '">'
         personnage.innerHTML += "<span>" + element.ecrireNom() + "</span>";
 
@@ -121,7 +123,7 @@ function changerPage(personnageChoisi) {
     localStorage.setItem("personnageChoisi", personnageChoisi);
 }
 
-remplirTableauPersonnages(affichage, document.tabPersonnages);
-rechercher(document.tabPersonnages);
+remplirTableauPersonnages(affichage, tabPersonnages);
+rechercher(tabPersonnages);
 
-barreRecherche.addEventListener("keyup", function () { rechercher(document.tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", function () { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
