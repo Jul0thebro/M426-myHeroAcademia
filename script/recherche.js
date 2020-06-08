@@ -100,13 +100,15 @@ function remplirTableauPersonnages(div, tableau) {
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
 
-
         lien.href = "detailPersonnage.html";
-        lien.addEventListener("click", function () { changerPage(document.tabPersonnages[index]) })
+        lien.addEventListener("click", function () { changerPage(tabPersonnages[index]) })
+
 
         div.appendChild(lien);
 
         personnage.id = "personnage_" + index;
+
+        
 
         personnage.estDansFiltre = true;
 

@@ -15,6 +15,7 @@ function triAgeCroissant(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
+            
             if (values[index].age > values[index + 1].age) {
 
                 echangerValue(values, index);
