@@ -119,6 +119,7 @@ h3 {
     font-weight: unset;
     width: 99.9%;
     position: sticky;
+    position: -webkit-sticky;
     top: 0px;
     box-shadow: #0000004a 0px 12px 14px 0px;
     background-color: #ffffffe0;
@@ -230,5 +231,8 @@ a {
 @media (max-width:500px) {
     body{
         font-size: x-small;
+    }
+    header img {
+        height:90%;
     }
 }
