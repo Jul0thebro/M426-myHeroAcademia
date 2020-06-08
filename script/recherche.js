@@ -31,44 +31,50 @@ function rechercher(tableau) {
                 mots.pop();
             }
 
-            mots.forEach(mot => {
-                if (mot.length != 0) {
+            // mots.forEach(mot => {
+            //     if (mot.length != 0) {
 
-                    if (!nom && element.nom.toLowerCase().includes(mot.toLowerCase())) {
-                        nom = true;
-                    }
+            //         if (!nom && element.nom.toLowerCase().includes(mot.toLowerCase())) {
+            //             nom = true;
+            //         }
 
-                    if (!prenom && element.prenom.toLowerCase().includes(mot.toLowerCase())) {
-                        prenom = true;
-                    }
+            //         if (!prenom && element.prenom.toLowerCase().includes(mot.toLowerCase())) {
+            //             prenom = true;
+            //         }
 
-                    if (!nomHero && element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
-                        nomHero = true;
+            //         if (!nomHero && element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
+            //             nomHero = true;
 
-                    }
+            //         }
 
-                    switch (mots.length) {
-                        case 1:
-                            if (nomHero || prenom || nom) {
-                                estAffiche = true;
-                            }
-                            break;
-                        case 2:
-                            if (nom && prenom || nom && nomHero || prenom && nomHero) {
-                                estAffiche = true;
-                            }
-                            break;
-                        case 3:
-                            if (nom && prenom && nomHero) {
-                                estAffiche = true;
-                            }
-                            break;
-                        default:
-                            estAffiche = false;
-                            break;
-                    }
-                }
-            });
+            //         switch (mots.length) {
+            //             case 1:
+            //                 if (nomHero || prenom || nom) {
+            //                     estAffiche = true;
+            //                 }
+            //                 break;
+            //             case 2:
+            //                 if (nom && prenom || nom && nomHero || prenom && nomHero) {
+            //                     estAffiche = true;
+            //                 }
+            //                 break;
+            //             case 3:
+            //                 if (nom && prenom && nomHero) {
+            //                     estAffiche = true;
+            //                 }
+            //                 break;
+            //             default:
+            //                 estAffiche = false;
+            //                 break;
+            //         }
+            //     }
+            // });
+
+            if(element.ecrireNom().toLowerCase().indexOf(entree.toLowerCase()) > -1) {
+                estAffiche = true;
+            } else {
+                estAffiche = false;
+            }
 
             if (estAffiche && document.getElementById("personnage_" + index).estDansFiltre) {
                 document.getElementById("personnage_" + index).style.display = "block";
