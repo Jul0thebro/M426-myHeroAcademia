@@ -87,7 +87,7 @@ var tabPersonnages = [
     new Personnage("classe-1-a/fumikage.png", "Tokoyami", "Fumikage", "Tsukuyomi", 15, "Dark Shadow", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/shoto.png", "Todoroki", "Shoto", "", 15, "Glace et feu", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/toru.png", "Hagakure", "Toru", "Invisible girl", 15, "Invisibilité", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
-    new Personnage("alliance-villain-associe/nomu1.png", "Noir", "Brainless", "Inconnu", "Super régénération/Absorption des chocs", "Villain", "A remplir", "A remplir", [TAG_SEXE.INDETERMINE]),
+    new Personnage("alliance-villain-associe/nomu1.png", "Noir", "Brainless", "", "Inconnu", "Super régénération/Absorption des chocs", "Villain", "A remplir", "A remplir", [TAG_SEXE.INDETERMINE]),
     new Personnage("classe-1-a/minoru.png", "Minoru", "Mineta", "Grape Juice", 15, "Boing Boing", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/momo.png", "Yaoyorozu", "momo", "Creaty", 15, "Création", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("staff-ua/lunch-rush.png", "?", "Ranchi-Rasshu", "Lunch Rush", "Inconnu", "Inconnu", "Cuisiner", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
