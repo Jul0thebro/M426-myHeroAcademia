@@ -73,7 +73,7 @@ function afficherPersonnage() {
         alter.innerHTML += personnageTableau[5];
         fonction.innerHTML += personnageTableau[6];
 
-        histoire.innerHTML = personnageTableau[7];
+        histoire.innerHTML += personnageTableau[7];
     } else {
         redirection();
     }

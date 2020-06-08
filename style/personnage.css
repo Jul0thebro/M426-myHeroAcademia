@@ -33,7 +33,7 @@
 }
 
 #divNom {
-    width: 98%;
+    width: 95%;
     display:flex;
     align-items:center;
     /* height: 5vh; */
@@ -88,6 +88,7 @@
 
 fieldset {
     padding: 2%;
+    border-color:black;
 }
 
 @media (max-width:1000px) {

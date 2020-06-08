@@ -63,7 +63,8 @@ var tabPersonnages = [
     new Personnage("classe-1-a/hizashi.png", "Hizashi", "Yamada", "Present Mic", 30, "Voix", "Héro Professeur", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("/classe-1-a/ochaco.png", "Uraraka", "Ochaco", "Uravity", 15, "Zéro Gravity", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("classe-1-a/tenya.png", "Ida", "Tenya", "", 15, "Moteur/Engine", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
-    new Personnage("staff-ua/nezu.png", "?", "Nezu", "Proviseur", "Inconnu", "Haute Performance", "Proviseur UA", "A remplir", "A remplir", [TAG_SEXE.HOMME])
+    new Personnage("staff-ua/nezu.png", "?", "Nezu", "Proviseur", "Inconnu", "Haute Performance", "Proviseur UA", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    
 ]
 
 var tabPersonnagesOriginal = tabPersonnages.slice();
