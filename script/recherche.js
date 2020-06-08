@@ -18,18 +18,18 @@ function rechercher(tableau) {
 
         // viderTableauPersonnagesAffiches()
 
-        tableau.forEach(function (element, index) {
+        tableau.forEach(function(element, index) {
 
-            var mots = entree.split(' ');
+            // var mots = entree.split(' ');
             var estAffiche = false;
 
             var nom = false;
             var prenom = false;
             var nomHero = false;
 
-            if (mots[mots.length - 1].length == 0) {
-                mots.pop();
-            }
+            // if (mots[mots.length - 1].length == 0) {
+            //     mots.pop();
+            // }
 
             // mots.forEach(mot => {
             //     if (mot.length != 0) {
@@ -70,7 +70,7 @@ function rechercher(tableau) {
             //     }
             // });
 
-            if(element.ecrireNom().toLowerCase().indexOf(entree.toLowerCase()) > -1) {
+            if (element.ecrireNom().toLowerCase().indexOf(entree.toLowerCase()) > -1) {
                 estAffiche = true;
             } else {
                 estAffiche = false;
@@ -83,8 +83,8 @@ function rechercher(tableau) {
             }
         });
     } else {
-        tableau.forEach(function (element, index) {
-            document.getElementById("personnage_" + index).style.display = "none";
+        tableau.forEach(function(element, index) {
+            document.getElementById("personnage_" + index).style.display = "block";
         })
     }
 }
@@ -95,27 +95,27 @@ function remplirTableauPersonnages(div, tableau) {
 
     div.innerHTML = "";
 
-    tableau.forEach(function (element, index) {
+    tableau.forEach(function(element, index) {
 
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
 
         lien.href = "detailPersonnage.html";
-        lien.addEventListener("click", function () { changerPage(tabPersonnages[index]) })
+        lien.addEventListener("click", function() { changerPage(tabPersonnages[index]) })
 
 
         div.appendChild(lien);
 
         personnage.id = "personnage_" + index;
 
-        
+
 
         personnage.estDansFiltre = true;
 
         personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.ecrireNom() + '">'
         personnage.innerHTML += "<span>" + element.ecrireNom() + "</span>";
 
-        personnage.style.display = "none";
+        personnage.style.display = "block";
 
         lien.appendChild(personnage);
 
@@ -134,4 +134,4 @@ function changerPage(personnageChoisi) {
 remplirTableauPersonnages(affichage, tabPersonnages);
 rechercher(tabPersonnages);
 
-barreRecherche.addEventListener("keyup", function () { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", function() { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */

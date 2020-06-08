@@ -33,9 +33,9 @@ function appuyerFiltre() {
  * @param {Array} filtres contient le tableau de tous les filtrs appliqués
  */
 function filtrer(tableauPersonnage, filtres) {
-    var estValide = false;// Indique que le personnage rentre dans les critères des filtres
+    var estValide = false; // Indique que le personnage rentre dans les critères des filtres
 
-    tableauPersonnage.forEach(function (personnage, index) {
+    tableauPersonnage.forEach(function(personnage, index) {
         estValide = false;
 
         filtres.forEach(filtre => {
