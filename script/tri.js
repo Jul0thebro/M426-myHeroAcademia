@@ -60,7 +60,7 @@ function triOrdreAlphabetique(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            if (values[index].nom.localeCompare(values[index + 1].nom) == 1) {
+            if (values[index].prenom.localeCompare(values[index + 1].prenom) == 1) {
 
                 echangerValue(values, index);
 
@@ -82,7 +82,7 @@ function triOrdreAlphabetiqueInverse(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            if (values[index].nom.localeCompare(values[index + 1].nom) == -1) {
+            if (values[index].prenom.localeCompare(values[index + 1].prenom) == -1) {
 
                 echangerValue(values, index);
 
