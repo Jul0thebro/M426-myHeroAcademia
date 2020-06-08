@@ -15,7 +15,7 @@ function triAgeCroissant(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            
+
             if (values[index].age > values[index + 1].age) {
 
                 echangerValue(values, index);
@@ -60,16 +60,49 @@ function triOrdreAlphabetique(values) {
     do {
         isSorted = true;
         for (let index = 0; index < values.length - 1; index++) {
-            if (values[index].prenom.localeCompare(values[index + 1].prenom) == 1) {
+            if (values[index])
+                if (values[index].prenom.localeCompare(values[index + 1].prenom) == 1) {
 
-                echangerValue(values, index);
+                    echangerValue(values, index);
 
-                isSorted = false;
-            }
+                    isSorted = false;
+                }
         }
     } while (isSorted == false)
 
     return values;
+}
+
+/**
+ * Permet de mettre les personnages dont l'âge est inconnu à la fin du tableau
+ * @param {Array} values tableau des personnages
+ */
+function exclurePersonnageSansAge(values) {
+    var temp = [];
+
+
+    for (let index = 0; index < values.length; index++) {
+        if (isNaN(values[index].age)) {
+            temp.push(values[index]);
+            values.splice(index, 1);
+            index--;
+        }
+    }
+    // values.forEach(function (personnage, index) {
+    //     if (isNaN(personnage.age)) {
+    //         temp.push(personnage);
+    //         values.splice(index, 1)
+    //     }
+    // });
+
+    temp[0].estLimiteAge = true;
+
+    temp.forEach(element => {
+        values.push(element);
+    })
+
+    return values;
+
 }
 
 /**
@@ -116,8 +149,10 @@ function effectuerTri(checkboxs) {
     }
 
     if (checkboxs[2].checked == true) {
+        tabPersonnages = exclurePersonnageSansAge(tabPersonnages.slice());
         tabPersonnages = triAgeCroissant(tabPersonnages.slice());
     } else if (checkboxs[3].checked == true) {
+        tabPersonnages = exclurePersonnageSansAge(tabPersonnages.slice());
         tabPersonnages = triAgeDecroissant(tabPersonnages.slice());
     }
 }

@@ -31,6 +31,7 @@ class Personnage {
         this.histoire = histoire;
         this.episode = episode;
         this.tags = tags;
+        this.estLimiteAge = false;
     }
 
     toString() {
@@ -52,8 +53,8 @@ const TAG_SEXE = {
 }
 
 var tabPersonnages = [
-    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 16, "One For All", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
-    new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 16, "A remplir", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 15, "One For All", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 15, "A remplir", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("hero-pro/kamui-woods-dieu-sylvestre.png", "Shinji", "Nishiya", "Le dieu Sylvestre", "Inconnu", "Bois", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("parents/inko.png", "Midoriya", "Inko", "", "Inconnu", "Télékinésie légère", "Inconnu", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
@@ -71,7 +72,7 @@ var tabPersonnages = [
     new Personnage("staff-ua/power-loader.png", "Maijima", "Higari", "Power Loader", 41, "Ongle d'acier", "Héro Professeur", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/aizawa.png", "Shota", "Aizawa", "Eraser Head", 30, "Effacement", "Héro Professeur", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-b/sekijiro.png", "Sekijiro", "Kan", "Vlad King", 30, "Manipulation du sang", "Héro Professeur", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
-    new Personnage("classe-1-a/mina.png", "Ashido", "Mina", "Pinkie", 15, "Acide", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/mina.png", "Ashido", "Mina", "Pinkie", 15, "Acide", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("classe-1-a/tsuyu.png", "Tsuyu", "Asuyu", "Froppy", 15, "Grenouille", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("classe-1-a/denki.png", "Kaminari", "Denki", "Chargéclair", 15, "Électricité", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("staff-ua/snipe.png", "?", "Sunaipu", "Snipe", "Inconnu", "Tête chercheuse", "Héro Professeur", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
@@ -83,13 +84,13 @@ var tabPersonnages = [
     new Personnage("classe-1-a/mezo.png", "Mezo", "Shoji", "Tentapoulpe", 15, "Bras cloneur", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/kyoka.png", "Jiro", "Kyoka", "L'héroïne audio", 15, "Earphone Jack", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("classe-1-a/hanta.png", "Hanta", "Sero", "Cellophane", 15, "Ruban adhésif", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
-    new Personnage("alliance-villain-associe/kurogiri.png", "?", "Kurogiri", "?", "Inconnu", "Portail", "Villain", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("alliance-villain-associe/kurogiri.png", "?", "Kurogiri", "", "Inconnu", "Portail", "Villain", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/fumikage.png", "Tokoyami", "Fumikage", "Tsukuyomi", 15, "Dark Shadow", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/shoto.png", "Todoroki", "Shoto", "", 15, "Glace et feu", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/toru.png", "Hagakure", "Toru", "Invisible girl", 15, "Invisibilité", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("alliance-villain-associe/nomu1.png", "Noir", "Brainless", "", "Inconnu", "Super régénération/Absorption des chocs", "Villain", "A remplir", "A remplir", [TAG_SEXE.INDETERMINE]),
     new Personnage("classe-1-a/minoru.png", "Minoru", "Mineta", "Grape Juice", 15, "Boing Boing", "Apprentie héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
-    new Personnage("classe-1-a/momo.png", "Yaoyorozu", "momo", "Creaty", 15, "Création", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
+    new Personnage("classe-1-a/momo.png", "Yaoyorozu", "Momo", "Creaty", 15, "Création", "Apprenti héro", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
     new Personnage("staff-ua/lunch-rush.png", "?", "Ranchi-Rasshu", "Lunch Rush", "Inconnu", "Inconnu", "Cuisiner", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("alliance-villain-associe/shigaraki.png", "Tomura", "Shigaraki", "?", 20, "Désintégration", "villain", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("hero-pro/tensei-lida.png", "Ida", "Tensei", "Ingenium", "Inconnu", "Moteur", "Héro pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),

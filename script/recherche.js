@@ -18,14 +18,14 @@ function rechercher(tableau) {
 
         // viderTableauPersonnagesAffiches()
 
-        tableau.forEach(function(element, index) {
+        tableau.forEach(function (element, index) {
 
             // var mots = entree.split(' ');
             var estAffiche = false;
 
-            var nom = false;
-            var prenom = false;
-            var nomHero = false;
+            // var nom = false;
+            // var prenom = false;
+            // var nomHero = false;
 
             // if (mots[mots.length - 1].length == 0) {
             //     mots.pop();
@@ -83,9 +83,13 @@ function rechercher(tableau) {
             }
         });
     } else {
-        tableau.forEach(function(element, index) {
-            document.getElementById("personnage_" + index).style.display = "block";
-        })
+        tableau.forEach(function (element, index) {
+            if (document.getElementById("personnage_" + index).estDansFiltre) {
+                document.getElementById("personnage_" + index).style.display = "block";
+            } else {
+                document.getElementById("personnage_" + index).style.display = "none";
+            }
+        });
     }
 }
 /**
@@ -95,14 +99,20 @@ function remplirTableauPersonnages(div, tableau) {
 
     div.innerHTML = "";
 
-    tableau.forEach(function(element, index) {
+    tableau.forEach(function (element, index) {
 
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
 
         lien.href = "detailPersonnage.html";
-        lien.addEventListener("click", function() { changerPage(tabPersonnages[index]) })
+        lien.addEventListener("click", function () { changerPage(tabPersonnages[index]) })
 
+        if(element.estLimiteAge){
+            var limiteAge = document.createElement("h3");
+            limiteAge.innerHTML = "Age inconnu ↴";
+            element.estLimiteAge = false;
+            div.appendChild(limiteAge);
+        }
 
         div.appendChild(lien);
 
@@ -118,7 +128,6 @@ function remplirTableauPersonnages(div, tableau) {
         personnage.style.display = "block";
 
         lien.appendChild(personnage);
-
     });
 }
 
@@ -134,4 +143,4 @@ function changerPage(personnageChoisi) {
 remplirTableauPersonnages(affichage, tabPersonnages);
 rechercher(tabPersonnages);
 
-barreRecherche.addEventListener("keyup", function() { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", function () { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
