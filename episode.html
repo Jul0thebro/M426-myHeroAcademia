@@ -11,35 +11,32 @@
 
 <body>
     <header>
-        <a href="href=index.html">
+        <a href="index.html">
             <img src="resources/images/logo.png" alt="logo de mha" class="logo" />
-            <span class="messageInfoLogo">Appuyer pour retourner à la page de sélection de personnage</span>
+            <span class="messageInfoLogo">Appuyez pour retourner à la page de sélection</span>
         </a>
     </header>
     <div id="page">
         <main>
-            <div id="imageEpisode">
-                <img src="resources/images/ep1s1.jpg">
-            </div>
-            <div id="persoEpisode">
-                <p id="listePerso">Personnages qui apparaissent pour la 1ère fois dans cet épisode :</p>
-                <ul>
-                    <li>
-                        <p class="nomPerso">Deku</p>
-                    </li>
-                    <li>
-                        <p class="nomPerso">All Might</p>
-                    </li>
-                    <li>
-                        <p class="nomPerso">Bakugo</p>
-                    </li>
-                </ul>
-            </div>
+            <img id="imageEpisode" src="resources/images/ep1s1.jpg">
+            <h1 id="infos">
+                <div id="titre">
+                    Nom épisode
+                </div>
+                <div id="episode">
+                    Numéro Episode
+                </div>
+                <div id="saison">
+                    Numéro Saison
+                </div>
+            </h1>
         </main>
-        <aside id="nom">
-            <h2>EP1/S1 : nom ep</h2>
-        </aside>
+        <fieldset>
+            <legend>Personnages qui apparaissent pour la première fois dans cet épisode</legend>
+            <div id="listePersonnages"></div>
+        </fieldset>
     </div>
 </body>
+<script type="text/javascript" src="script/episodes.js"></script>
 
 </html>

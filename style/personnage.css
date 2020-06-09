@@ -1,5 +1,5 @@
 #divPrincipal {
-    width: 52%;
+    width: 60%;
     height: 70%;
 
     padding: 2vh 1.5vw 2vh 1.5vw;
@@ -72,6 +72,10 @@
 
     width: 50%;
     height: 30vh;
+
+    padding: 1%;
+
+    text-align: center;
 }
 
 #histoire {
@@ -79,7 +83,8 @@
     width: 80%;
 
     margin: auto;
-    padding: 1%;
+    margin-top: 2vh;
+    padding: 1% 2%;
     
     border-style: solid;
 }

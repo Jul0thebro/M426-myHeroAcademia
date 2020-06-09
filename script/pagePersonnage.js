@@ -20,6 +20,7 @@ var age = document.getElementById("age");
 var alter = document.getElementById("alter");
 var fonction = document.getElementById("fonction");
 var histoire = document.getElementById("contenuHistoire");
+var premiereApparition = document.getElementById("premiereApparition");
 
 /**
  * Permet de récupérer les informations du personnage à afficher
@@ -61,6 +62,7 @@ function alerterRedirection() {
 function afficherPersonnage() {
     if (recupererPersonnageChoisi()) {
         var personnageTableau = personnageChoisi.split(";");
+        var infoEpisode = personnageTableau[8].split(",");
 
         image.src = personnageTableau[0];
         image.alt = personnageTableau[1] + " " + personnageTableau[2] + " " + personnageTableau[3];
@@ -74,6 +76,8 @@ function afficherPersonnage() {
         fonction.innerHTML += personnageTableau[6];
 
         histoire.innerHTML += personnageTableau[7];
+
+        premiereApparition.innerHTML += "Épisode : " + infoEpisode[0] + " - Saison : " + infoEpisode[1];
     } else {
         redirection();
     }

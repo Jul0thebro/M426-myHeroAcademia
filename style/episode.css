@@ -1,54 +1,87 @@
 body {
-    text-align: center;   
+    text-align: center;
 }
 
 main {
-    width: 50vw;
-    height: 100%;
-    float: left;
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 4%;
+    display: flex;
+    align-items: center;
 }
 
 #imageEpisode {
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    width: 50%;
-    margin-left: 30%;
-    padding-right: 2%;
-    padding-bottom: 0.5%;
-}
-
-#imageEpisode img {
-    width: 102%;
+    flex: 30%;
+    width: 100%;
+    box-shadow: #000000b8 8px 8px 20px 0px;
 }
 
 #page {
-    padding-top: 1%;
+    padding: 1%;
     width: 80%;
     height: 70%;
-    background-color: #0000004f;
-    margin:auto;
-}
-
-#nom {
-    float: left;
-    margin-top: 7%;
-    font-size: 20pt;
-}
-
-ul {
-    width: 25%;
+    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
+    box-shadow: #00000042 0px 0px 15px 7px;
     margin: auto;
-    color: white;
+    border-radius: 60px;
 }
 
-.nomPerso {
-    color: black;
-    font-size: 13pt;
+#infos {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    flex: 50%;
+    height: 90%;
+    font-size: 300%;
 }
 
-#listePerso {
-    margin-left: 13%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    font-size: 15pt;
+#episode, #saison {
+    font-size: 50%;
+}
+
+fieldset {
+    width: 95%;
+    height: 40%;
+    margin: auto;
+    border: 2px solid black;
+}
+
+fieldset div {
+    overflow-y: scroll;
+}
+
+legend {
+    font-size: 150%;
+}
+
+@media (max-width:900px) {
+    main {
+        flex-flow: column;
+    }
+    #imageEpisode {
+        max-width: 50%;
+    }
+}
+
+@media (max-width:900px) {
+    main {
+        flex-flow: column;
+    }
+    #imageEpisode {
+        max-width: 50%;
+    }
+}
+
+@media (max-width:650px) {
+    #imageEpisode {
+        max-width: 70%;
+    }
+}
+
+@media (max-width:400px) {
+    #imageEpisode {
+        max-width: 100%;
+        border-radius: 50px;
+    }
 }

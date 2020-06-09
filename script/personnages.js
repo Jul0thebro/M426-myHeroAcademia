@@ -17,7 +17,7 @@ class Personnage {
      * @param {string} alter contient le nom de l'alter : la description, peut être nul
      * @param {string} metier nom du métier de la personne / petite description
      * @param {string} histoire Histoire du personange
-     * @param {Array} episode Contient la première apparition du personnage : [saison, episode]
+     * @param {Array} episode Contient la première apparition du personnage : [episode, saison]
      * @param {Array} tags contient tous les tags qui permettent filter
      */
     constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episode, tags) {
@@ -53,7 +53,7 @@ const TAG_SEXE = {
 }
 
 var tabPersonnages = [
-    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 15, "One For All", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 15, "One For All", "Héro", "A remplir", [1, 1], [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 15, "A remplir", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("hero-pro/kamui-woods-dieu-sylvestre.png", "Shinji", "Nishiya", "Le dieu Sylvestre", "Inconnu", "Bois", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
