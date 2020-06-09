@@ -1,25 +1,32 @@
 #divPrincipal {
     width: 52%;
     height: 70%;
-    overflow-y: scroll;
+
+    padding: 2vh 1.5vw 2vh 1.5vw;
     margin: auto;
+
+    overflow-y: scroll;
+    
     background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
     box-shadow: #00000042 0px 0px 15px 7px;
     border-radius: 8% 0px 0px 8%;
-    padding: 2vh 1.5vw 2vh 1.5vw;
 }
 
 #divHaut {
-    width: 100%;
-    height: 70%;
-    margin-bottom: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    height: 50%;
+
+    margin: auto;
+    padding: 0% 3% 0 3%;
 }
 
 #divImg {
-    width: 30%;
-    float: left;
-    margin-top: 2%;
-    margin-left: 2%;
+    flex: 30%;
+    max-width: 30%;
 }
 
 #divImg img {
@@ -28,67 +35,77 @@
 }
 
 #partieDroite {
-    float: right;
-    width: 65%;
+    flex: 65%;
+    max-width: 65%;
 }
 
 #divNom {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    align-items: center;
+
     width: 95%;
-    display:flex;
-    align-items:center;
-    /* height: 5vh; */
-    /* float: right; */
-    margin:auto;
-    background-color: grey;
-    /* margin-top: 2vh; */
-    /* margin-right: 10px; */
     padding: 2% 1%;
-    border-style: solid;
+    margin: auto;
+    
+    border: 5px solid black;
+    background: #fffffffa;
+    text-shadow: -7px 7px 0px #00000045;
+    border-radius: 50px 0px 0px 50px;
 }
 
 #nom, #prenom, #nomHero {
-    /* display: inline-block; */
+    flex: 33%;
+
     text-align: center;
-    /* margin-left: 4.5vw; */
-    /* margin-top: 1vh; */
-    /* width: 30%; */
-    flex:33%;
-    font-size: 150%;
-    /* vertical-align: middle; */
+    font-size: 170%;
 }
 
 #bio {
-    width: 80%;
-    height: 30vh;
-    margin:auto;
-    margin-top: 3vh;
-    /* margin-right: 10px; */
-    /* float: right; */
-    border-style: solid;
-}
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
 
-#age, #alter, #fonction {
-    margin-top: 4vh;
-    margin-left: 2vw;
+    float: right;
+
+    width: 50%;
+    height: 30vh;
 }
 
 #histoire {
     height: 30vh;
     width: 80%;
+
     margin: auto;
-    border-style: solid;
     padding: 1%;
+    
+    border-style: solid;
 }
 
 #apparition {
     width: 80%;
+
     margin: auto;
     margin-top: 2vh;
 }
 
+#bio, fieldset {
+    border: 3px black solid;
+    background-color: #ffffff3b;
+}
+
 fieldset {
     padding: 2%;
-    border-color:black;
+}
+
+legend, #bio {
+    font-size: 150%;
+} 
+
+fieldset div {
+    font-size:130%;
 }
 
 @media (max-width:1000px) {
@@ -99,6 +116,16 @@ fieldset {
 
 @media (max-width:650px) {
     #divNom {
-        flex-flow:column;
+        flex-flow: column;
+    }
+
+    #divHaut {
+        width: 90%;
+        padding: 0%;
+    }
+
+    #divImg {
+        flex: 40%;
+        max-width: 40%;
     }
 }

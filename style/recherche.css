@@ -11,6 +11,7 @@ body {
 
 #divRecherche img {
     vertical-align: bottom;
+
     width: 4%;
 }
 
@@ -19,11 +20,13 @@ body {
 }
 
 #barreRecherche {
+    width: 20vw;
+    height: 4vh;
+
     text-align: center;
     font-size: larger;
     font-family: "Mha";
-    width: 20vw;
-    height: 4vh;
+    
     transition: width 1s;
     box-shadow: #0000004a 0px 3px 14px 4px;
 }
@@ -38,14 +41,17 @@ input#barreRecherche:hover {
 }
 
 #page {
-    padding-top: 3%;
-    height: 50%;
     display: flex;
+    
+    height: 50%;
+
+    padding-top: 3%;
 }
 
 #gauche {
-    border-right: 3px solid black;
     margin-left: 1%;
+
+    border-right: 3px solid black;
 }
 
 .tri li {
@@ -61,31 +67,40 @@ li:hover {
 }
 
 main {
+    display: inline-block;
+
     flex: 60%;
     height: 100%;
-    display: inline-block;
+    
     margin-left: 2%;
     margin-right: 2%;
 }
 
 #listePersonnages {
-    background-color: #0000006b;
-    overflow-y: scroll;
     height: 100%;
+
+    overflow-y: scroll;
+
+    background-color: #0000006b;
     box-shadow: #0000004a 0px 3px 14px 4px;
     text-shadow: -7px 7px 0px #00000045;
 }
 
 #listePersonnages div {
-    text-align: left;
-    font-size: 200%;
     height: 20%;
+
+    font-size: 200%;
+    text-align: left;
 }
 
 #listePersonnages div img {
     vertical-align: middle;
-    margin-right: 8vw;
+
     height: 100%;
+
+    margin-right: 8vw;
+
+    box-shadow: #0000007a 0px 0px 10px 0px;
 }
 
 #droite {
@@ -118,8 +133,8 @@ h3 {
     font-size: 170%;
     font-weight: unset;
     width: 99.9%;
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     top: 0px;
     box-shadow: #0000004a 0px 12px 14px 0px;
     background-color: #ffffffe0;
@@ -155,7 +170,7 @@ li {
     padding: 7% 0%;
     display: flex;
     align-items: center;
-    user-select: none;
+    user-select: none;   
 }
 
 li label {
@@ -163,7 +178,7 @@ li label {
     flex: 90%
 }
 
-li * {
+li *{
     cursor: pointer;
 }
 
@@ -225,14 +240,5 @@ a {
     }
     #divRecherche img {
         width: 8%;
-    }
-}
-
-@media (max-width:500px) {
-    body{
-        font-size: x-small;
-    }
-    header img {
-        height:90%;
     }
 }

@@ -104,7 +104,7 @@ function remplirTableauPersonnages(div, tableau) {
         var lien = document.createElement("a");
         var personnage = document.createElement("div");
 
-        lien.href = "detailPersonnage.html";
+        lien.href = "personnage.html";
         lien.addEventListener("click", function () { changerPage(tabPersonnages[index]) })
 
         if(element.estLimiteAge){

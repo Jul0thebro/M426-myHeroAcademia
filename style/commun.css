@@ -4,60 +4,103 @@
 // Desc.     :   Css qui est commun à toutes les pages
 // Version   :   1.0, 27.05.2020, LR, version initiale
 */
+
 @font-face {
-    font-family: 'Mha';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Mha'), url('../resources/font/mhaFont.woff') format('woff');
+  font-family: 'Mha';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Mha'), url('../resources/font/mhaFont.woff') format('woff');
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 html {
-    height:100%;
+  height: 100%;
 }
 
 body {
-    height:100%;
-    width:100%;
-    margin: auto;
-
-    font-family: "Mha";
-    background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  font-family: "Mha";
+  background-image: linear-gradient(to right bottom, #ffed00, #ffcf00, #ffb100, #ff930f, #fb7523, #ff6f4d, #ff6e6f, #ff748c, #fd9ac1, #f5bfe6, #f2e1fa, #ffffff);
 }
 
 header {
-    padding-top: 1%;
-    padding-bottom:1%;
-    text-align: center;
-    height:20%;
-    width:100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+  height: 20%;
+  width: 100%;
 }
 
 header img {
-    height: 100%;
+  height: 100%;
 }
 
 /* width */
+
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #00000066;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFF;
+}
+
+.messageInfoLogo {
+  transform: translate(-245px, 146px);
+  position: absolute;
+  font-size: smaller;
+  font-weight: unset;
+  color: rgba(0, 0, 0, 0);
+  background-color: #ffffff00;
+  box-shadow: #00000000 4px 8px 13px 3px;
+  padding: 0.5%;
+  transition-duration: 1s;
+  user-select: none;
+}
+
+header .logo:hover+.messageInfoLogo, .messageInfoLogo:hover {
+  transition-duration: 1s;
+  color: black;
+  background-color: #ffffffeb;
+  box-shadow: #00000063 4px 8px 13px 3px;
+}
+
+.logo {
+  user-select: none;
+}
+
+@media (max-width:900px) {
+  body {
+    font-size: smaller;
+    background-size: 100% 200%;
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #00000066;
+}
+
+@media (max-width:500px) {
+  body {
+    font-size: x-small;
   }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: black; 
-    
+  header img {
+    height: 90%;
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #FFF; 
-  }
+}

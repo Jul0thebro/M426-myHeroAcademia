@@ -10,7 +10,13 @@
 </head>
 
 <body>
-    <header><img src="resources/images/logo.png" alt="logo de mha" /></header>
+    <header>
+        <a href="#">
+            <img src="resources/images/logo.png" alt="logo de mha" class="logo" />
+            <span class="messageInfoLogo">Appuyer pour retourner à la page de sélection de personnage</span>
+        </a>
+
+    </header>
     <div id="divRecherche">
         <img src="resources/images/aile-gauche.png" id="aileGauche" />
         <input type="text" placeholder="rechercher" id="barreRecherche" />
@@ -20,16 +26,26 @@
         <aside id="gauche">
             <h2>Trier</h2>
             <ul class="tri">
-                <li><label for="ordreAlphabetique">Ordre Alphabétique</label><input type="checkbox"
-                        name="ordreAlphabetique" class="checkboxTri" id="ordreAlphabetique"
-                        onclick="activerCheckbox(event, 0)"></li>
-                <li><label for="ordreAlphabetiqueInverse">Ordre Alphabétique (inverse)</label><input type="checkbox"
-                        name="ordreAlphabetique" id="ordreAlphabetiqueInverse" class="checkboxTri"
-                        onclick="activerCheckbox(event, 1)"></li>
-                <li><label for="ordreAgeCroissant">Age (croissant)</label><input type="checkbox" name="ordreAge"
-                        class="checkboxTri" id="ordreAgeCroissant" onclick="activerCheckbox(event, 0)"></li>
-                <li><label for="ordreAgeDecroissant">Age (décroissant)</label><input type="checkbox" name="ordreAge"
-                        class="checkboxTri" id="ordreAgeDecroissant" onclick="activerCheckbox(event, 1)"></li>
+                <li>
+                    <label for="ordreAlphabetique">OrdreAlphabétique</label>
+                    <input type="checkbox" name="ordreAlphabetique" class="checkboxTri" id="ordreAlphabetique"
+                        onclick="activerCheckbox(event, 0)">
+                </li>
+                <li>
+                    <label for="ordreAlphabetiqueInverse">Ordre Alphabétique (inverse)</label>
+                    <input type="checkbox" name="ordreAlphabetique" class="checkboxTri" id="ordreAlphabetiqueInverse"
+                        onclick="activerCheckbox(event, 1)">
+                </li>
+                <li>
+                    <label for="ordreAgeCroissant">Age(croissant)</label>
+                    <input type="checkbox" name="ordreAge" class="checkboxTri" id="ordreAgeCroissant"
+                        onclick="activerCheckbox(event, 0)">
+                </li>
+                <li>
+                    <label for="ordreAgeDecroissant">Age(décroissant)</label>
+                    <input type="checkbox" name="ordreAge" class="checkboxTri" id="ordreAgeDecroissant"
+                        onclick="activerCheckbox(event, 1)">
+                </li>
             </ul>
         </aside>
         <main>
@@ -41,12 +57,18 @@
         <aside id="droite">
             <h2>Filtrer</h2>
             <ul class="filtre">
-                <li><input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="homme">
-                    <label for="homme">Homme</label></li>
-                <li><input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="femme">
-                    <label for="femme">Femme</label></li>
-                <li><input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="indetermine">
-                    <label for="indetermine">Indéterminé</label></li>
+                <li>
+                    <input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="homme">
+                    <label for="homme">Homme</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="femme">
+                    <label for="femme">Femme</label>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="indetermine">
+                    <label for="indetermine">Indéterminé</label>
+                </li>
             </ul>
         </aside>
     </div>

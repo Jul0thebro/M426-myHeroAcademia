@@ -19,7 +19,7 @@ var nomHero = document.getElementById("nomHero");
 var age = document.getElementById("age");
 var alter = document.getElementById("alter");
 var fonction = document.getElementById("fonction");
-var histoire = document.getElementById("histoire");
+var histoire = document.getElementById("contenuHistoire");
 
 /**
  * Permet de récupérer les informations du personnage à afficher
