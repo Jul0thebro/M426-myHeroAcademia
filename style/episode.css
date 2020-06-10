@@ -14,7 +14,7 @@ main {
 #imageEpisode {
     flex: 30%;
     width: 100%;
-    box-shadow: #000000b8 8px 8px 20px 0px;
+    box-shadow: #000000b8 -8px 8px 20px 0px;
 }
 
 #page {
@@ -27,13 +27,18 @@ main {
     border-radius: 60px;
 }
 
-#infos {
+h1 {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
-    flex: 50%;
+    flex: 45%;
     height: 90%;
+    padding: 0% 2%;
     font-size: 300%;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    box-shadow: 7px 7px 0px black;
+    text-shadow: #0000008f 8px 2px 10px;
 }
 
 #episode, #saison {
@@ -42,17 +47,34 @@ main {
 
 fieldset {
     width: 95%;
-    height: 40%;
+    max-height: 40%;
     margin: auto;
     border: 2px solid black;
 }
 
-fieldset div {
+fieldset #listePersonnages {
     overflow-y: scroll;
 }
 
 legend {
     font-size: 150%;
+}
+
+a div {
+    background-color: #0000006b;
+    text-shadow: -7px 7px 0px #00000045;
+    text-align: left;
+    font-size:200%;
+}
+
+a[href="personnage.html"] img {
+    vertical-align: middle;
+    margin-right:3vw;
+    width: 20%;
+}
+
+::-webkit-scrollbar-track {
+    background: #00000096;
 }
 
 @media (max-width:900px) {

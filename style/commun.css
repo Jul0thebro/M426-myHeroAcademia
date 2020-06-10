@@ -89,6 +89,19 @@ header .logo:hover+.messageInfoLogo, .messageInfoLogo:hover {
   user-select: none;
 }
 
+a:visited {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover div {
+  background-color: #fffdfd85;
+}
+
 @media (max-width:900px) {
   body {
     font-size: smaller;
@@ -102,5 +115,11 @@ header .logo:hover+.messageInfoLogo, .messageInfoLogo:hover {
   }
   header img {
     height: 90%;
+  }
+}
+
+@media (max-width:430px) {
+  header img {
+    height: 80%;
   }
 }

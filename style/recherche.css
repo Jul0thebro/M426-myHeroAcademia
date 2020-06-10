@@ -206,22 +206,6 @@ input[type="checkbox"] {
     margin-left: 3%;
 }
 
-a:hover div {
-    background-color: #fffdfd85;
-}
-
-a:visited div span {
-    color: white;
-}
-
-a div span {
-    color: white;
-}
-
-a {
-    text-decoration: none;
-}
-
 @media (max-width:900px) {
     body {
         font-size: smaller;

@@ -92,45 +92,6 @@ function rechercher(tableau) {
         });
     }
 }
-/**
- * Remplit le tableau avec tous les personnages
- */
-function remplirTableauPersonnages(div, tableau) {
-
-    div.innerHTML = "";
-
-    tableau.forEach(function (element, index) {
-
-        var lien = document.createElement("a");
-        var personnage = document.createElement("div");
-
-        lien.href = "personnage.html";
-        lien.addEventListener("click", function () { changerPage("idPersonnageChoisi", tabPersonnages[index].id) })
-
-        if(element.estLimiteAge){
-            var limiteAge = document.createElement("h3");
-            limiteAge.innerHTML = "Age inconnu ↴";
-            element.estLimiteAge = false;
-            div.appendChild(limiteAge);
-        }
-
-        div.appendChild(lien);
-
-        personnage.id = "personnage_" + index;
-
-
-
-        personnage.estDansFiltre = true;
-
-        personnage.innerHTML = '<img src="' + element.photo + '" alt="' + element.ecrireNom() + '">'
-        personnage.innerHTML += "<span>" + element.ecrireNom() + "</span>";
-
-        personnage.style.display = "block";
-
-        lien.appendChild(personnage);
-    });
-}
-
 
 /**
  * Permet de mettre les données dans le local storage pour afficher la bonne page de personnage

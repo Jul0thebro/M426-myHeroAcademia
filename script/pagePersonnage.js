@@ -59,6 +59,9 @@ function afficherPersonnage() {
 
         histoire.innerHTML += personnageTableau.histoire;
 
+        premiereApparition.addEventListener("click", function () {
+            transmettreEpisode(personnageTableau.episode.numEpisode, personnageTableau.episode.numSaison)
+        });
         premiereApparition.innerHTML += personnageTableau.episode.ecrireEpisodeAbrege();
     } else {
         redirection(NOM_PAGE_COURANTE, NOM_PAGE_REDIRECTION, MESSAGE_REDIRECTION);
@@ -74,15 +77,25 @@ function identifierPersonnage(tableauPersonnages, idPersonnage) {
     var personnage = null;
 
     for (let index = 0; index < tableauPersonnages.length; index++) {
-        if(idPersonnage == tableauPersonnages[index].id) {
+        if (idPersonnage == tableauPersonnages[index].id) {
             personnage = tableauPersonnages[index];
-            
+
             // Permet de sortir de la boucle dès qu'on a trouvé le personnage
             index = tableauPersonnages.length;
         }
     }
 
     return personnage;
+}
+
+/**
+ * Transmet les informations des épisodes lorsqu'on appui sur le bouton
+ * @param {Number} numEpisode Numéro de l'épisode appuyé
+ * @param {Number} numSaison Numéro de la saison appuyé
+ */
+function transmettreEpisode(numEpisode, numSaison) {
+    localStorage.setItem("numSaisonChoisi", numSaison);
+    localStorage.setItem("numEpisodeChoisi", numEpisode);
 }
 
 afficherPersonnage();

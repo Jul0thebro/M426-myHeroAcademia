@@ -94,6 +94,8 @@
 
     margin: auto;
     margin-top: 2vh;
+
+    text-align:center;
 }
 
 #bio, fieldset {
@@ -101,7 +103,7 @@
     background-color: #ffffff3b;
 }
 
-fieldset {
+#histoire {
     padding: 2%;
 }
 
@@ -111,6 +113,16 @@ legend, #bio {
 
 fieldset div {
     font-size:130%;
+}
+
+a:hover #premiereApparition {
+    background-color: #00000042;
+}
+
+#premiereApparition {
+    padding: 2%;
+    text-shadow: -7px 7px 0px #00000045;
+    background-color: #0000006b;
 }
 
 @media (max-width:1000px) {
