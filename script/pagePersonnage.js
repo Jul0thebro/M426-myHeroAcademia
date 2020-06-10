@@ -5,11 +5,11 @@
 
 // Constantes
 const MESSAGE_REDIRECTION = "Vous devez d'abord choisir un personnage à afficher, nous allons vous rediriger sur la page pour choisir votre personnage.";
-const NOM_PAGE_COURANTE = "detailPersonnage.html";
+const NOM_PAGE_COURANTE = "personnage.html";
 const NOM_PAGE_REDIRECTION = "index.html";
 
 // Variables
-var personnageChoisi;// Personnage choisi
+var idPersonnageChoisi;// Personnage choisi
 
 // Récupère les élments html qui vont contenir les informations 
 var image = document.getElementById("image");
@@ -27,60 +27,62 @@ var premiereApparition = document.getElementById("premiereApparition");
  * @return {Boolean} retourne true si on a les in formations sinon retourne false
  */
 function recupererPersonnageChoisi() {
-    var personnageChoisiLocalStorage = localStorage.getItem("personnageChoisi");
+    var idPersonnageChoisiLocalStorage = localStorage.getItem("idPersonnageChoisi");
 
-    if (personnageChoisiLocalStorage == null) {
-        personnageChoisi = null;
+    if (idPersonnageChoisiLocalStorage == null) {
+        idPersonnageChoisi = null;
+        return false;
     }
     else {
-        personnageChoisi = personnageChoisiLocalStorage;
-    }
-
-    if (personnageChoisi == null) {
-        return false;
-    } else {
+        idPersonnageChoisi = idPersonnageChoisiLocalStorage;
         return true;
     }
 }
 
-
 /**
- * Fait une redirection sur la apge pour choisir un personnage
+ * Affiche toutes les informaztions du personnage
  */
-function redirection() {
-    alerterRedirection();
-    window.location.href = window.location.href.replace(NOM_PAGE_COURANTE, NOM_PAGE_REDIRECTION);
-}
-
-/**
- * Fait une alerte avant la redirection
- */
-function alerterRedirection() {
-    alert(MESSAGE_REDIRECTION);
-}
-
 function afficherPersonnage() {
     if (recupererPersonnageChoisi()) {
-        var personnageTableau = personnageChoisi.split(";");
-        var infoEpisode = personnageTableau[8].split(",");
+        var personnageTableau = identifierPersonnage(tabPersonnages, idPersonnageChoisi);
 
-        image.src = personnageTableau[0];
-        image.alt = personnageTableau[1] + " " + personnageTableau[2] + " " + personnageTableau[3];
+        image.src = personnageTableau.photo;
+        image.alt = personnageTableau.ecrireNom;
 
-        nom.innerHTML = personnageTableau[1];
-        prenom.innerHTML = personnageTableau[2];
-        nomHero.innerHTML = personnageTableau[3];
+        nom.innerHTML = personnageTableau.nom;
+        prenom.innerHTML = personnageTableau.prenom;
+        nomHero.innerHTML = personnageTableau.nomHero;
 
-        age.innerHTML += personnageTableau[4];
-        alter.innerHTML += personnageTableau[5];
-        fonction.innerHTML += personnageTableau[6];
+        age.innerHTML += personnageTableau.age;
+        alter.innerHTML += personnageTableau.alter;
+        fonction.innerHTML += personnageTableau.metier;
 
-        histoire.innerHTML += personnageTableau[7];
+        histoire.innerHTML += personnageTableau.histoire;
 
-        premiereApparition.innerHTML += "Épisode : " + infoEpisode[0] + " - Saison : " + infoEpisode[1];
+        premiereApparition.innerHTML += personnageTableau.episode.ecrireEpisodeAbrege();
     } else {
-        redirection();
+        redirection(NOM_PAGE_COURANTE, NOM_PAGE_REDIRECTION, MESSAGE_REDIRECTION);
     }
+}
+
+/**
+ * Permet de récupérer le personnage qui a été choisi
+ * @param {Array} tableauPersonnages tableau contenant tous les personnages
+ * @param {Number} idPersonnage Id unique de chaque personnage, différent de l'index dans le tableau
+ */
+function identifierPersonnage(tableauPersonnages, idPersonnage) {
+    var personnage = null;
+
+    for (let index = 0; index < tableauPersonnages.length; index++) {
+        if(idPersonnage == tableauPersonnages[index].id) {
+            personnage = tableauPersonnages[index];
+            
+            // Permet de sortir de la boucle dès qu'on a trouvé le personnage
+            index = tableauPersonnages.length;
+        }
+    }
+
+    return personnage;
 }
 
 afficherPersonnage();

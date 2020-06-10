@@ -24,9 +24,14 @@ class Episode {
         return this.photo + ";" + this.numSaison + ";" + this.numEpisode + ";" + this.titre;
     }
 
-    ecrireNom() {
+    ecrireEpisodeComplet() {
         return this.titre + "[" + numEpisode + "-" + numSaison + "]";
     }
+
+    ecrireEpisodeAbrege() {
+        return "Épisode : " + this.numEpisode + " - Saison : " + this.numSaison;
+    }
+
 }
 
 // Nombres d'épisodes par saisons
@@ -132,12 +137,14 @@ const NOM_EPISODE_24_SAISON_4 = "";
 const NOM_EPISODE_25_SAISON_4 = "";
 
 // Crée le tableau des épisodes
-var tabEpisodes = [];
+var tabEpisodes = new Object();
 
 // Rempli le tableau des épisodes
 for (let numSaison = 1; numSaison <= NB_SAISONS; numSaison++) {
+    tabEpisodes[numSaison] = new Object();
+
     for (let numEpisode = 1; numEpisode <= eval("NB_EPISODES_SAISON_" + numSaison); numEpisode++) {
         var episode = new Episode(numEpisode, numSaison, eval("NOM_EPISODE_" + numEpisode + "_SAISON_" + numSaison));
-        tabEpisodes.push(episode);
+        tabEpisodes[numSaison][numEpisode] = episode;
     }
 }

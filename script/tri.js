@@ -51,6 +51,32 @@ function triAgeDecroissant(values) {
 }
 
 /**
+ * Permet de mettre les personnages dont l'âge est inconnu à la fin du tableau
+ * @param {Array} values tableau des personnages
+ */
+function exclurePersonnageSansAge(values) {
+    var temp = [];
+
+
+    for (let index = 0; index < values.length; index++) {
+        if (isNaN(values[index].age)) {
+            temp.push(values[index]);
+            values.splice(index, 1);
+            index--;
+        }
+    }
+
+    temp[0].estLimiteAge = true;
+
+    temp.forEach(element => {
+        values.push(element);
+    })
+
+    return values;
+
+}
+
+/**
  * Trie les personnages dans l'ordre alphabétique
  * @param {array of Personnage} values 
  */
@@ -71,38 +97,6 @@ function triOrdreAlphabetique(values) {
     } while (isSorted == false)
 
     return values;
-}
-
-/**
- * Permet de mettre les personnages dont l'âge est inconnu à la fin du tableau
- * @param {Array} values tableau des personnages
- */
-function exclurePersonnageSansAge(values) {
-    var temp = [];
-
-
-    for (let index = 0; index < values.length; index++) {
-        if (isNaN(values[index].age)) {
-            temp.push(values[index]);
-            values.splice(index, 1);
-            index--;
-        }
-    }
-    // values.forEach(function (personnage, index) {
-    //     if (isNaN(personnage.age)) {
-    //         temp.push(personnage);
-    //         values.splice(index, 1)
-    //     }
-    // });
-
-    temp[0].estLimiteAge = true;
-
-    temp.forEach(element => {
-        values.push(element);
-    })
-
-    return values;
-
 }
 
 /**

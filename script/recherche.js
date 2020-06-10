@@ -105,7 +105,7 @@ function remplirTableauPersonnages(div, tableau) {
         var personnage = document.createElement("div");
 
         lien.href = "personnage.html";
-        lien.addEventListener("click", function () { changerPage(tabPersonnages[index]) })
+        lien.addEventListener("click", function () { changerPage("idPersonnageChoisi", tabPersonnages[index].id) })
 
         if(element.estLimiteAge){
             var limiteAge = document.createElement("h3");
@@ -134,10 +134,11 @@ function remplirTableauPersonnages(div, tableau) {
 
 /**
  * Permet de mettre les données dans le local storage pour afficher la bonne page de personnage
- * @param {Personnage} personnageChoisi Personnage que l'utilisateur a choisi
+ * @param {String} itemLocalStorage nom de l'item qui a être mis dans le local storage
+ * @param {Object} itemChoisi Item que l'utilisateur a choisi
  */
-function changerPage(personnageChoisi) {
-    localStorage.setItem("personnageChoisi", personnageChoisi);
+function changerPage(itemLocalStorage, itemChoisi) {
+    localStorage.setItem(itemLocalStorage, itemChoisi);
 }
 
 remplirTableauPersonnages(affichage, tabPersonnages);

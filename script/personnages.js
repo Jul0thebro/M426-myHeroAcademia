@@ -3,21 +3,23 @@
 // Desc.     :   Tableau qui contient tous les personnages avec toutes les informations nécessaires
 // Version   :   1.0, 20.04.2020, LR, version initiale
 
+var idPersonnage = 0;// Permet d'attribuer à chaque personne un identifiant unique
+
 /**
  * Crée un personnage
  */
 class Personnage {
     /**
      * 
-     * @param {string} photo nom de la photo exemple : deku.png
-     * @param {string} nom nom de famill du personnage
-     * @param {string} prenom prénom du personnage
-     * @param {string} nomHero nom du héro, peut être nul
-     * @param {int} age âge du personnage
-     * @param {string} alter contient le nom de l'alter : la description, peut être nul
-     * @param {string} metier nom du métier de la personne / petite description
-     * @param {string} histoire Histoire du personange
-     * @param {Array} episode Contient la première apparition du personnage : [episode, saison]
+     * @param {String} photo nom de la photo exemple : deku.png
+     * @param {String} nom nom de famill du personnage
+     * @param {String} prenom prénom du personnage
+     * @param {String} nomHero nom du héro, peut être nul
+     * @param {Number} age âge du personnage
+     * @param {String} alter contient le nom de l'alter : la description, peut être nul
+     * @param {String} metier nom du métier de la personne / petite description
+     * @param {String} histoire Histoire du personange
+     * @param {Episode} episode Contient la première apparition du personnage : [saison][episode]
      * @param {Array} tags contient tous les tags qui permettent filter
      */
     constructor(photo, nom, prenom, nomHero, age, alter, metier, histoire, episode, tags) {
@@ -32,12 +34,19 @@ class Personnage {
         this.episode = episode;
         this.tags = tags;
         this.estLimiteAge = false;
+        this.id = idPersonnage++;
     }
 
+    /**
+     * Renvoie des informations du personnage sous forme de liste séparée par des ";"
+     */
     toString() {
         return this.photo + ";" + this.nom + ";" + this.prenom + ";" + this.nomHero + ";" + this.age + ";" + this.alter + ";" + this.metier + ";" + this.histoire + ";" + this.episode;
     }
 
+    /**
+     * Ecrit le prénom du personnage, son nom et son nom de héro
+     */
     ecrireNom() {
         return this.prenom + " " + this.nom + " " + this.nomHero;
     }
@@ -53,8 +62,8 @@ const TAG_SEXE = {
 }
 
 var tabPersonnages = [
-    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 15, "One For All", "Héro", "A remplir", [1, 1], [TAG_SEXE.HOMME]),
-    new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 15, "A remplir", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/izuku.png", "Midoriya", "Izuku", "Deku", 15, "One For All", "Héro", "A remplir", tabEpisodes[1][1], [TAG_SEXE.HOMME]),
+    new Personnage("classe-1-a/bakugo.png", "Katsuki", "Bakugo", "", 15, "Explosion", "Héro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("classe-1-a/allmight.png", "Toshinori", "Yagi", "All Might", 50, "One For All", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("hero-pro/kamui-woods-dieu-sylvestre.png", "Shinji", "Nishiya", "Le dieu Sylvestre", "Inconnu", "Bois", "Héro Pro", "A remplir", "A remplir", [TAG_SEXE.HOMME]),
     new Personnage("parents/inko.png", "Midoriya", "Inko", "", "Inconnu", "Télékinésie légère", "Inconnu", "A remplir", "A remplir", [TAG_SEXE.FEMME]),
