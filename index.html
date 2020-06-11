@@ -18,14 +18,14 @@
 
     </header>
     <div id="divRecherche">
-        <img src="resources/images/aile-gauche.png" id="aileGauche" />
+        <img src="resources/images/aile-gauche.png" id="aileGauche" alt="Aile gauche barre de recherche"/>
         <input type="text" placeholder="rechercher" id="barreRecherche" />
-        <img src="resources/images/aile-droite.png" id="aileDroite" />
+        <img src="resources/images/aile-droite.png" id="aileDroite" alt="Aile droite barre de recherche"/>
     </div>
-    <div id="page">
-        <aside id="gauche">
+    <div class="page">
+        <aside class="gauche">
             <h2>Trier</h2>
-            <ul class="tri">
+            <ul class="tri" id="triPersonnage">
                 <li>
                     <label for="ordreAlphabetique">Ordre Alphabétique</label>
                     <input type="checkbox" name="ordreAlphabetique" class="checkboxTri" id="ordreAlphabetique"
@@ -47,16 +47,22 @@
                         onclick="activerCheckbox(event, 1)">
                 </li>
             </ul>
+            <ul class="tri" id="triEpisode">
+            </ul>
         </aside>
         <main>
-            <h1>Personnages</h1>
-            <div id="listePersonnages">
+            <div>
+                <div class="boutonAffichage personnage" id="boutonPersonnage" onclick="changerAffichage(0)">Personnages</div>
+                <div class="boutonAffichage episode" id="boutonEpisode" onclick="changerAffichage(1)">Épisodes</div>
+                <h1>Personnages</h1>
+            </div>
+            <div id="liste" class="liste">
 
             </div>
         </main>
-        <aside id="droite">
+        <aside class="droite">
             <h2>Filtrer</h2>
-            <ul class="filtre">
+            <ul class="filtre" id="filtrePersonnage">
                 <li>
                     <input type="checkbox" class="checkboxFiltre" onclick="appuyerFiltre()" id="homme">
                     <label for="homme">Homme</label>
@@ -70,15 +76,20 @@
                     <label for="indetermine">Indéterminé</label>
                 </li>
             </ul>
+            <ul class="filtre" id="filtreEpisode">
+
+            </ul>
         </aside>
     </div>
+    <script type="text/javascript" src="script/episodes.js"></script>
+    <script type="text/javascript" src="script/personnages.js"></script>
+    <script type="text/javascript" src="script/commun.js"></script>
+    <script type="text/javascript" src="script/recherche.js"></script>
+    <script type="text/javascript" src="script/filtre.js"></script>
+    <script type="text/javascript" src="script/tri.js"></script>
+    <script type="text/javascript" src="script/changerRecherche.js"></script>
 </body>
 
-<script type="text/javascript" src="script/episodes.js"></script>
-<script type="text/javascript" src="script/personnages.js"></script>
-<script type="text/javascript" src="script/commun.js"></script>
-<script type="text/javascript" src="script/recherche.js"></script>
-<script type="text/javascript" src="script/filtre.js"></script>
-<script type="text/javascript" src="script/tri.js"></script>
+
 
 </html>

@@ -27,7 +27,7 @@ main {
     border-radius: 60px;
 }
 
-h1 {
+#infos {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -45,32 +45,36 @@ h1 {
     font-size: 50%;
 }
 
-fieldset {
+h2+div {
     width: 95%;
-    max-height: 40%;
+    max-height: 37%;
+    height:auto;
     margin: auto;
     border: 2px solid black;
-}
-
-fieldset #listePersonnages {
+    background-color: #0000006b;
     overflow-y: scroll;
 }
 
-legend {
+h1 {
+    font-size: 100%;
+}
+
+h2 {
     font-size: 150%;
+    font-weight: normal;
 }
 
 a div {
-    background-color: #0000006b;
+    
     text-shadow: -7px 7px 0px #00000045;
     text-align: left;
-    font-size:200%;
+    font-size: 200%;
 }
 
 a[href="personnage.html"] img {
     vertical-align: middle;
-    margin-right:3vw;
-    width: 20%;
+    margin-right: 3vw;
+    width: 12%;
 }
 
 ::-webkit-scrollbar-track {
@@ -92,6 +96,16 @@ a[href="personnage.html"] img {
     }
     #imageEpisode {
         max-width: 50%;
+    }
+}
+
+@media(max-width:600px) {
+    #listePersonnages img {
+        width:20%;
+    }
+
+    #listePersonnages {
+        font-size: 80%;
     }
 }
 

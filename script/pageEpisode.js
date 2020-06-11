@@ -27,7 +27,7 @@ function recupererEpisodeChoisi() {
     var numSaison = localStorage.getItem("numSaisonChoisi");
     var numEpisode = localStorage.getItem("numEpisodeChoisi");
 
-    if (numSaison == null || numEpisode == null) {
+    if (numSaison == null || numSaison == "undefined" || numEpisode == null || numEpisode == "undefined") {
         return false;
     } else {
         episodeChoisi = tabEpisodes[numSaison][numEpisode];
@@ -60,6 +60,7 @@ function getPersonnagesEpisode(tabPersonnages, numSaison, numEpisode) {
 function afficherEpisode() {
     if (recupererEpisodeChoisi()) {
         conteneurImageEpisode.src = episodeChoisi.photo;
+        conteneurImageEpisode.alt = episodeChoisi.alt();
         conteneurNomEpisode.innerHTML = episodeChoisi.titre;
         conteneurNumEpisode.innerHTML = "Épisode n°" + episodeChoisi.numEpisode;
         conteneurNumSaison.innerHTML = "Saison n°" + episodeChoisi.numSaison;

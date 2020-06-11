@@ -5,8 +5,9 @@
 
 // Création des variables
 var barreRecherche = document.getElementById("barreRecherche"); // Input de la barre de recherche
-var affichage = document.getElementById("listePersonnages"); // Div dans laquelle est affiché le lien vers le personnage
+var affichage = document.getElementById("liste"); // Div dans laquelle est affiché le lien vers le personnage
 
+var affichageCourant = 1;
 
 /**
  * Affiche les personnages qui correspondent à la recherche
@@ -16,59 +17,9 @@ function rechercher(tableau) {
 
     if (entree.length != 0) {
 
-        // viderTableauPersonnagesAffiches()
-
         tableau.forEach(function (element, index) {
 
-            // var mots = entree.split(' ');
             var estAffiche = false;
-
-            // var nom = false;
-            // var prenom = false;
-            // var nomHero = false;
-
-            // if (mots[mots.length - 1].length == 0) {
-            //     mots.pop();
-            // }
-
-            // mots.forEach(mot => {
-            //     if (mot.length != 0) {
-
-            //         if (!nom && element.nom.toLowerCase().includes(mot.toLowerCase())) {
-            //             nom = true;
-            //         }
-
-            //         if (!prenom && element.prenom.toLowerCase().includes(mot.toLowerCase())) {
-            //             prenom = true;
-            //         }
-
-            //         if (!nomHero && element.nomHero.toLowerCase().includes(mot.toLowerCase())) {
-            //             nomHero = true;
-
-            //         }
-
-            //         switch (mots.length) {
-            //             case 1:
-            //                 if (nomHero || prenom || nom) {
-            //                     estAffiche = true;
-            //                 }
-            //                 break;
-            //             case 2:
-            //                 if (nom && prenom || nom && nomHero || prenom && nomHero) {
-            //                     estAffiche = true;
-            //                 }
-            //                 break;
-            //             case 3:
-            //                 if (nom && prenom && nomHero) {
-            //                     estAffiche = true;
-            //                 }
-            //                 break;
-            //             default:
-            //                 estAffiche = false;
-            //                 break;
-            //         }
-            //     }
-            // });
 
             if (element.ecrireNom().toLowerCase().indexOf(entree.toLowerCase()) > -1) {
                 estAffiche = true;
@@ -76,33 +27,78 @@ function rechercher(tableau) {
                 estAffiche = false;
             }
 
-            if (estAffiche && document.getElementById("personnage_" + index).estDansFiltre) {
-                document.getElementById("personnage_" + index).style.display = "block";
+            if (estAffiche && document.getElementById("element_" + index).estDansFiltre) {
+                document.getElementById("element_" + index).style.display = "block";
             } else {
-                document.getElementById("personnage_" + index).style.display = "none";
+                document.getElementById("element_" + index).style.display = "none";
             }
         });
     } else {
         tableau.forEach(function (element, index) {
-            if (document.getElementById("personnage_" + index).estDansFiltre) {
-                document.getElementById("personnage_" + index).style.display = "block";
+            if (document.getElementById("element_" + index).estDansFiltre) {
+                document.getElementById("element_" + index).style.display = "block";
             } else {
-                document.getElementById("personnage_" + index).style.display = "none";
+                document.getElementById("element_" + index).style.display = "none";
             }
         });
     }
 }
 
 /**
- * Permet de mettre les données dans le local storage pour afficher la bonne page de personnage
- * @param {String} itemLocalStorage nom de l'item qui a être mis dans le local storage
- * @param {Object} itemChoisi Item que l'utilisateur a choisi
+ * Affiche les personnages qui correspondent à la recherche
  */
-function changerPage(itemLocalStorage, itemChoisi) {
-    localStorage.setItem(itemLocalStorage, itemChoisi);
+function rechercherEpisode(tableau) {
+    var entree = barreRecherche.value;
+
+    if (entree.length != 0) {
+        var saison = new Object();
+
+        for (let indexSaison = 1; indexSaison <= NB_SAISONS; indexSaison++) {
+            saison = tableau[indexSaison];
+            for (let indexEpisode = 1; indexEpisode < eval("NB_EPISODES_SAISON_" + indexSaison); indexEpisode++) {
+                var estAffiche = false;
+
+                if (saison[indexEpisode].ecrireEpisodeComplet().toLowerCase().indexOf(entree.toLowerCase()) > -1) {
+                    estAffiche = true;
+                } else {
+                    estAffiche = false;
+                }
+
+                if (estAffiche && document.getElementById("element_" + indexEpisode + "_" + indexSaison).estDansFiltre) {
+                    document.getElementById("element_" + indexEpisode + "_" + indexSaison).style.display = "block";
+                } else {
+                    document.getElementById("element_" + indexEpisode + "_" + indexSaison).style.display = "none";
+                }
+            }
+        }
+    } else {
+        var saison = new Object();
+
+        for (let indexSaison = 1; indexSaison <= NB_SAISONS; indexSaison++) {
+            saison = tableau[indexSaison];
+            for (let indexEpisode = 1; indexEpisode < eval("NB_EPISODES_SAISON_" + indexSaison); indexEpisode++) {
+                if (document.getElementById("element_" + indexEpisode + "_" + indexSaison).estDansFiltre) {
+                    document.getElementById("element_" + indexEpisode + "_" + indexSaison).style.display = "block";
+                } else {
+                    document.getElementById("element_" + indexEpisode + "_" + indexSaison).style.display = "none";
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Permet de faire la recherche adéquate
+ */
+function effectuerRecherche() {
+    if(affichageCourant == 0) {
+        rechercher(tabPersonnages)
+    } else if(affichageCourant == 1) {
+        rechercherEpisode(tabEpisodes)
+    }
 }
 
 remplirTableauPersonnages(affichage, tabPersonnages);
 rechercher(tabPersonnages);
 
-barreRecherche.addEventListener("keyup", function () { rechercher(tabPersonnages) }); /* rajoute l'évenement sur la barre de recherche */
+barreRecherche.addEventListener("keyup", effectuerRecherche); /* rajoute l'évenement sur la barre de recherche */

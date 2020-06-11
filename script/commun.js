@@ -23,6 +23,15 @@ function alerterRedirection(message) {
 }
 
 /**
+ * Permet de mettre les données dans le local storage pour afficher la bonne page de personnage
+ * @param {String} itemLocalStorage nom de l'item qui a être mis dans le local storage
+ * @param {Object} itemChoisi Item que l'utilisateur a choisi
+ */
+function changerPage(itemLocalStorage, itemChoisi) {
+    localStorage.setItem(itemLocalStorage, itemChoisi);
+}
+
+/**
  * Remplit le tableau avec tous les personnages
  */
 function remplirTableauPersonnages(div, tableau) {
@@ -35,7 +44,7 @@ function remplirTableauPersonnages(div, tableau) {
         var personnage = document.createElement("div");
 
         lien.href = "personnage.html";
-        lien.addEventListener("click", function () { changerPage("idPersonnageChoisi", tabPersonnages[index].id) })
+        lien.addEventListener("click", function () { changerPage("idPersonnageChoisi", tableau[index].id) })
 
         if(element.estLimiteAge){
             var limiteAge = document.createElement("h3");
@@ -46,9 +55,7 @@ function remplirTableauPersonnages(div, tableau) {
 
         div.appendChild(lien);
 
-        personnage.id = "personnage_" + index;
-
-
+        personnage.id = "element_" + index;
 
         personnage.estDansFiltre = true;
 
@@ -59,4 +66,39 @@ function remplirTableauPersonnages(div, tableau) {
 
         lien.appendChild(personnage);
     });
+}
+
+/**
+ * Remplit le tableau avec tous les personnages
+ */
+function remplirTableauEpisodes(div, tableau) {
+    var saison = new Object();
+
+    div.innerHTML = "";
+
+    for (let indexSaison = 1; indexSaison <= NB_SAISONS; indexSaison++) {
+        saison = tableau[indexSaison];
+        for (let indexEpisode = 1; indexEpisode < eval("NB_EPISODES_SAISON_" + indexSaison); indexEpisode++) {
+            var lien = document.createElement("a");
+            var episode = document.createElement("div");
+    
+            lien.href = "episode.html";
+            
+            lien.addEventListener("click", function () { changerPage("numSaisonChoisi", indexSaison); changerPage("numEpisodeChoisi", indexEpisode)})    
+    
+            div.appendChild(lien);
+    
+            episode.id = "element_" + indexEpisode + "_" + indexSaison;
+            episode.className = "divEpisode";
+    
+            episode.estDansFiltre = true;
+    
+            episode.innerHTML = '<img src="' + saison[indexEpisode].photo + '" alt="' + saison[indexEpisode].alt() + '">'
+            episode.innerHTML += "<span>" + saison[indexEpisode].ecrireEpisodeComplet() + "</span>";
+    
+            episode.style.display = "block";
+    
+            lien.appendChild(episode);
+        }
+    }
 }

@@ -45,9 +45,9 @@ function filtrer(tableauPersonnage, filtres) {
         });
 
         if (estValide) {
-            document.getElementById("personnage_" + index).estDansFiltre = true;
+            document.getElementById("element_" + index).estDansFiltre = true;
         } else {
-            document.getElementById("personnage_" + index).estDansFiltre = false;
+            document.getElementById("element_" + index).estDansFiltre = false;
         }
 
     });
@@ -59,6 +59,6 @@ function filtrer(tableauPersonnage, filtres) {
  */
 function resetEtatFiltre(tableauPersonnage) {
     for (index = 0; index < tableauPersonnage.length; index++) {
-        document.getElementById("personnage_" + index).estDansFiltre = true;
+        document.getElementById("element_" + index).estDansFiltre = true;
     }
 }

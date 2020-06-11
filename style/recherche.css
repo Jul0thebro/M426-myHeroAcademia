@@ -11,7 +11,6 @@ body {
 
 #divRecherche img {
     vertical-align: bottom;
-
     width: 4%;
 }
 
@@ -22,11 +21,9 @@ body {
 #barreRecherche {
     width: 20vw;
     height: 4vh;
-
     text-align: center;
     font-size: larger;
     font-family: "Mha";
-    
     transition: width 1s;
     box-shadow: #0000004a 0px 3px 14px 4px;
 }
@@ -40,17 +37,14 @@ input#barreRecherche:hover {
     transform: translateX(-2.5vw);
 }
 
-#page {
+.page {
     display: flex;
-    
     height: 50%;
-
     padding-top: 3%;
 }
 
-#gauche {
+.gauche {
     margin-left: 1%;
-
     border-right: 3px solid black;
 }
 
@@ -68,61 +62,52 @@ li:hover {
 
 main {
     display: inline-block;
-
     flex: 60%;
     height: 100%;
-    
     margin-left: 2%;
     margin-right: 2%;
 }
 
-#listePersonnages {
+.liste {
     height: 100%;
-
     overflow-y: scroll;
-
     background-color: #0000006b;
     box-shadow: #0000004a 0px 3px 14px 4px;
     text-shadow: -7px 7px 0px #00000045;
 }
 
-#listePersonnages div {
+.liste div {
     height: 20%;
-
     font-size: 200%;
     text-align: left;
 }
 
-#listePersonnages div img {
-    height: 100%;
-
-    vertical-align: middle;
-
-    margin-right: 8vw;
-
-    box-shadow:#0000007a 0px -2px 5px 1px;
+.liste .divEpisode img {
+    margin-right:2vw;
 }
 
-#droite {
-    margin-right: 1%;
+.liste div img {
+    height: 100%;
+    vertical-align: middle;
+    margin-right: 8vw;
+    box-shadow: #0000007a 0px -2px 5px 1px;
+}
 
+.droite {
+    margin-right: 1%;
     border-left: 3px solid black;
 }
 
 aside {
     display: inline-block;
-
     flex: 20%;
     height: 100%;
-
     margin-top: 2%;
-
     box-shadow: #00000021 0px 20px 20px 3px;
 }
 
 h1 {
     width: 100%;
-
     font-size: 300%;
     box-shadow: #0000004a 0px 12px 14px 0px;
 }
@@ -130,7 +115,6 @@ h1 {
 h2 {
     padding-bottom: 5%;
     padding-top: 5%;
-
     font-size: 200%;
     box-shadow: #0000004a 0px 5px 14px 0px;
 }
@@ -139,9 +123,7 @@ h3 {
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
-
     width: 99.9%;
-    
     color: black;
     font-size: 170%;
     font-weight: unset;
@@ -149,7 +131,7 @@ h3 {
     box-shadow: #0000004a 0px 12px 14px 0px;
 }
 
-h1, h3{
+h1, h3 {
     padding: 1% 0%;
 }
 
@@ -159,7 +141,7 @@ h1, h2 {
 }
 
 h1, h2, h3 {
-    text-shadow:none;
+    text-shadow: none;
 }
 
 ul {
@@ -176,11 +158,9 @@ ul {
 
 li {
     display: flex;
-
     padding: 7% 0%;
-    
     align-items: center;
-    user-select: none;   
+    user-select: none;
 }
 
 li label {
@@ -188,13 +168,12 @@ li label {
     flex: 90%
 }
 
-li *{
+li * {
     cursor: pointer;
 }
 
 input[type="checkbox"] {
     flex: 10%;
-
     margin-top: 1%;
 }
 
@@ -206,41 +185,75 @@ input[type="checkbox"] {
     margin-left: 3%;
 }
 
-@media (max-width:900px) {
+.boutonAffichage {
+    padding: 1%;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0px 0px 15px 2px #ffffffbf;
+    cursor:pointer;
+    user-select:none;
+    transition:1s;
+    transition:transform 0.1s;
+}
+
+.boutonAffichage:hover {
+    background-color: white;
+    color: black;
+}
+
+.boutonAffichage:active {
+    transform:translate(0px, 5px);
+}
+
+.personnage {
+    float:left;
+}
+
+.episode {
+    float:right;
+}
+
+
+
+@media (max-width:1000px) {
     body {
         font-size: smaller;
+    }
+}
+
+@media (max-width:450px) {
+    .liste div {
+        height: 15%;
+        font-size:185%;
+    }
+}
+
+@media (max-width:900px) {
+    body {
         background-size: 100% 200%;
     }
-
-    #page {
+    .page {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
-
     main {
         order: 1;
         flex: 100%;
         max-width: 100%;
-
         margin-bottom: 8vh;
     }
-
-    #gauche {
+    .gauche {
         order: 2;
     }
-
-    #droite {
+    .droite {
         order: 3;
     }
-
     aside {
         height: auto;
         flex: 40%;
         max-width: 40%;
-
         margin-bottom: 2vh;
     }
-
     #divRecherche img {
         width: 8%;
     }

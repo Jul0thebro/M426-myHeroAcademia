@@ -25,13 +25,16 @@ class Episode {
     }
 
     ecrireEpisodeComplet() {
-        return this.titre + "[" + numEpisode + "-" + numSaison + "]";
+        return this.titre + " [" + this.numEpisode + "-" + this.numSaison + "]";
     }
 
     ecrireEpisodeAbrege() {
         return "Épisode : " + this.numEpisode + " - Saison : " + this.numSaison;
     }
 
+    alt() {
+        return "Image : " + this.ecrireEpisodeAbrege();
+    }
 }
 
 // Nombres d'épisodes par saisons
@@ -41,23 +44,23 @@ const NB_EPISODES_SAISON_3 = 25;
 const NB_EPISODES_SAISON_4 = 25;
 
 // Nombre de saisons
-const NB_SAISONS = 4;
+const NB_SAISONS = 1;
 
 // Nom des épisodes
 // Saison 1
 const NOM_EPISODE_1_SAISON_1 = "IZUKU MIDORIYA : LES ORIGINES";
-const NOM_EPISODE_2_SAISON_1 = "";
-const NOM_EPISODE_3_SAISON_1 = "";
-const NOM_EPISODE_4_SAISON_1 = "";
-const NOM_EPISODE_5_SAISON_1 = "";
-const NOM_EPISODE_6_SAISON_1 = "";
-const NOM_EPISODE_7_SAISON_1 = "";
-const NOM_EPISODE_8_SAISON_1 = "";
-const NOM_EPISODE_9_SAISON_1 = "";
-const NOM_EPISODE_10_SAISON_1 = "";
-const NOM_EPISODE_11_SAISON_1 = "";
-const NOM_EPISODE_12_SAISON_1 = "";
-const NOM_EPISODE_13_SAISON_1 = "";
+const NOM_EPISODE_2_SAISON_1 = "LES CONDITIONS AU MÉTIER DE HÉROS";
+const NOM_EPISODE_3_SAISON_1 = "LE GRONDEMENT DES MUSCLES";
+const NOM_EPISODE_4_SAISON_1 = "LA LIGNE DE DÉPART";
+const NOM_EPISODE_5_SAISON_1 = "MES CAPACITÉS ACTUELLES";
+const NOM_EPISODE_6_SAISON_1 = "DÉCHAÎNE-TOI, MAUDIT NERD";
+const NOM_EPISODE_7_SAISON_1 = "DEKU CONTRE KATCHAN";
+const NOM_EPISODE_8_SAISON_1 = "KATSUKI SUR LA LIGNE DE DÉPART";
+const NOM_EPISODE_9_SAISON_1 = "FONCE, TENYA !";
+const NOM_EPISODE_10_SAISON_1 = "RENCONTRE AVEC L'INCONNU";
+const NOM_EPISODE_11_SAISON_1 = "GAME OVER";
+const NOM_EPISODE_12_SAISON_1 = "ALL MIGHT";
+const NOM_EPISODE_13_SAISON_1 = "DANS LE CŒUR DE CHACUN";
 
 // Saison 2
 const NOM_EPISODE_1_SAISON_2 = "";
